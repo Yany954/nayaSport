@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container{
+  background-image: url(../src/assets/img/BACKGROUNDHOME.svg);
+  background-repeat:repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.aaaa{
+  position: absolute;
+  background-color: aqua;
+}
