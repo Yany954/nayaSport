@@ -1,13 +1,14 @@
 import React from "react";
 import Header from "../components/Globals/Header/Header";
-import Button from "../components/Globals/Button/Button";
+import Section1 from "../components/Home/Section1";
 
 function Home() {
   return(
     <div className="container">
         <Header />
-        <Button text='Personalizado' />
-        <Button text='Tienda Virtual' />
+<Section1 />
+        
+
     </div>
 
   ) 

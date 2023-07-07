@@ -54,7 +54,7 @@ function Header() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="warning"
+              color= "warning"
             >
               <MenuIcon />
             </IconButton>
@@ -107,7 +107,7 @@ function Header() {
               <Link className="navbar-link" key={page} to={page[1]}>
                 <Button
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "orange", display: "block" }}
+                  sx={{ my: 2, color: "white",fontWeight: 600, display: "block" }}
                 >
                   {page[0]}
                 </Button>
