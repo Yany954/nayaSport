@@ -19,9 +19,9 @@ code {
 }
 
 .container {
-  background-image: url(../src/assets/img/bg2.svg);
-  background-repeat: repeat;
-  background-size: cover;
+  background-image: url(../src/assets/img/Bg.webp);
+  background-repeat: repeat-y;
+  background-size: contain;
   min-height: 100vh;
 }
 

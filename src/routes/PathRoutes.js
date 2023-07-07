@@ -12,7 +12,7 @@ export const pages = [
     ["Uniformes", pathRoutes.uniforms],
     ["Accesorios", pathRoutes.accesories],
     ["Ofertas", pathRoutes.offers],
-    ["Guía de tallas", pathRoutes.sizes]
+    ["Contáctanos", pathRoutes.sizes]
 ];
 
 export const apiWhatsApp = {
