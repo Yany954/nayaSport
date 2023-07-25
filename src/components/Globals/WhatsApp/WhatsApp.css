@@ -1,0 +1,14 @@
+.whatsapp-icon-link {
+    position: fixed;
+    margin: 2%;
+    bottom: 0;
+    right: 0;
+    background-color:#3BD673;
+    padding: 1%;
+    border-radius: 100%;
+}
+
+.whatsapp-icon{
+    width: 100%;
+    color: aliceblue;
+}

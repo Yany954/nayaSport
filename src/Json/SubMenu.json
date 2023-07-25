@@ -1,0 +1,214 @@
+[{
+  "DEPORTES": [
+    {
+      "name": "Fútbol",
+      "items": [
+        "Balon futbol",
+        "Malla normal",
+        "Malla cabaña",
+        "Guantes arquero",
+        "Pelota de fundamentación futbol",
+        "Short para arquero"
+      ]
+    },
+    {
+      "name": "Fútbol Playa",
+      "items": [
+        "Balón fútbol playa"
+      ]
+    },
+    {
+      "name": "Microfútbol",
+      "items": [
+        "Balon microfutbol",
+        "Malla cabaña",
+        "Malla normal"
+      ]
+    },
+    {
+      "name": "FutSala",
+      "items": [
+        "Balon futsala",
+        "Malla cabaña",
+        "Malla normal"
+      ]
+    },
+    {
+      "name": "Futbol americano",
+      "items": [
+        "Balon futbol americano"
+      ]
+    },
+    {
+      "name": "Baloncesto",
+      "items": [
+        "Balon de baloncesto",
+        "Balon de minibaloncesto",
+        "Pelota de fundamentación baloncesto",
+        "Malla",
+        "Aro de baloncesto",
+        "Rodillera"
+      ]
+    },
+    {
+      "name": "Voleibol",
+      "items": [
+        "Balon voleibol",
+        "Balón minivoley",
+        "Pelota fundamentación voleibol",
+        "Malla",
+        "Antena",
+        "Rodillera"
+      ]
+    },
+    {
+      "name": "Softball",
+      "items": [
+        "Bola de softball"
+      ]
+    },
+    {
+      "name": "Voleyplaya",
+      "items": []
+    },
+    {
+      "name": "Balonmano",
+      "items": [
+        "Balon balonmano"
+      ]
+    },
+    {
+      "name": "Rugby",
+      "items": [
+        "Balón rugby",
+        "Casco protector rugby",
+        "Llavero balon rugby"
+      ]
+    },
+    {
+      "name": "Tenis de campo",
+      "items": [
+        "Malla tenis campo",
+        "Malla futbol tenis"
+      ]
+    },
+    {
+      "name": "Tenis de mesa",
+      "items": [
+        "Mesa",
+        "Parales",
+        "Mallas",
+        "Raqueta",
+        "Balla"
+      ]
+    },
+    {
+      "name": "Boxeo",
+      "items": [
+        "Guantin",
+        "Manopla",
+        "Casco protector",
+        "Pechera"
+      ]
+    },
+    {
+      "name": "Karate",
+      "items": [
+        "Guantes",
+        "Pechera"
+      ]
+    },
+    {
+      "name": "Taekwondo",
+      "items": []
+    },
+    {
+      "name": "Atletismo",
+      "items": []
+    },
+    {
+      "name": "Natación",
+      "items": []
+    }
+  ],
+  "MALETAS": [
+    "Maletas",
+    "Morrales",
+    "Maletines",
+    "Tulas Baloneras"
+  ],
+  "EQUIPAMIENTO DEPORTIVO": [
+    "Conos",
+    "Bases",
+    "Postes",
+    "Ganchos",
+    "Ula Ula",
+    "Mini Barrera",
+    "Mini arco",
+    "Platillos",
+    "Escalera atletica",
+    "Arcos",
+    "Obstáculo"
+  ],
+  "ÁRBITROS Y JUECES": [
+    "Tarjetas",
+    "Tableros",
+    "Marcadores",
+    "Banderola",
+    "Silbato"
+  ],
+  "HERRAMIENTAS ELECTRÓNICAS": [
+    "Tablero",
+    "Cronometro",
+    "Caminadora",
+    "Carro balonero",
+    "Carro bolas de tenis",
+    "Aguja para balon",
+    "Bomba para inflar",
+    "Calibrador",
+    "Canastilla",
+    "Soporte C Ruedas",
+    "Silueta Penalty",
+    "Frisbee",
+    "Banda capitan",
+    "Bandera Plastica"
+  ],
+  "FITNESS": [
+    "Pesas",
+    "Bandas",
+    "Manijas",
+    "Rodilleras",
+    "Muñequeras",
+    "Pilates",
+    "Levantamiento de pesas"
+  ],
+  "JUEGOS DE MESA": [
+    "Futbolin y Jockey",
+    "Ajedrez",
+    "Tenis de mesa",
+    "Forro protector",
+    "Paral y malla tenis"
+  ],
+  "PROTECCIÓN PERSONAL": [
+    "Rodilleras",
+    "Coderas",
+    "Canilleras",
+    "Short protector termofor",
+    "Tobilleras",
+    "Muñequera",
+    "Muslera",
+    "Pantorrilleras",
+    "Soporte de cintura",
+    "Vendas y cintas"
+  ],
+    "OTROS": [
+    "Artículos para potencia",
+    "Pisos",
+    "Cuerdas",
+    "Balones medicinales",
+    "Cascos",
+    "Futbolin y hockey",
+    "Ajedrez",
+    "Pelotas didacticas"
+  ]
+}]

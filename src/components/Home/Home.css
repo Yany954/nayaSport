@@ -4,18 +4,19 @@
     align-items: center;
 }
 
-
 .home-section1-gif {
     margin: 2% 0 0 2%;
     border-radius: 50%;
     box-shadow: 5px 5px 50px white;
 }
 
-.home-section1-info {}
+.home-section1-info {
 
-.title {
+}
+
+.home-title {
     font-family: 'Faster One';
-    font-size: 3.5rem;
+    font-size: 4rem;
     color: #18B9C3
 }
 
@@ -26,6 +27,11 @@
 }
 
 @media screen and (width >=1024px) {
+    
+    .home-title {
+        font-size: 6rem;
+    }
+
     .home-section1 {
         flex-direction: row;
     }
@@ -33,10 +39,5 @@
     .home-section1-gif {
         margin: 2% 0 0 2%;
     }
-
-    .title{
-        font-size: 5rem;
-    }
-
-    .home-section1-title {}
+    
 }

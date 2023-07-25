@@ -2,9 +2,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { pathRoutes } from "./PathRoutes";
 import Home from "../pages/Home";
 import Uniforms from "../pages/Uniforms";
-import Offers from "../pages/Offers";
-import Sizes from "../pages/Sizes";
-
+import Customers from "../pages/Customers";
+import Contact from "../pages/Contact";
+import Accesories from "../pages/Accesories";
+import Uniform from "../pages/Uniform";
+import PrivacyPolicies from "../pages/PrivacyPolicies";
 
 function WebRoutes() {
   return (
@@ -12,8 +14,11 @@ function WebRoutes() {
       <Routes>
         <Route path={pathRoutes.home} Component={Home}></Route>
         <Route path={pathRoutes.uniforms} Component={Uniforms}></Route>
-        <Route path={pathRoutes.offers} Component={Offers}></Route>
-        <Route path={pathRoutes.sizes} Component={Sizes}></Route>
+        <Route path={pathRoutes.accesories} Component={Accesories}></Route>
+        <Route path={pathRoutes.customers} Component={Customers}></Route>
+        <Route path={pathRoutes.contact} Component={Contact}></Route>
+        <Route path={pathRoutes.uniform} Component={Uniform}></Route>
+        <Route path={pathRoutes.privacy} Component={PrivacyPolicies}></Route>
       </Routes>
     </BrowserRouter>
   );
