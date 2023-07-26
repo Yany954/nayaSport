@@ -1,6 +1,8 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import Title from "../Globals/Title/Title";
+import './custom.css'
 
 const formSchema = Yup.object().shape({
   email: Yup.string()
@@ -21,7 +23,7 @@ function msj() {
 
 const CustomForm = () => (
   <div className="container-formik">
-    <h1 className="formik-title">Sign Up</h1>
+
     <Formik
       //valores
       initialValues={{
@@ -63,51 +65,86 @@ const CustomForm = () => (
 
         return (
           <Form>
-            <label htmlFor="name">Nombre</label>
-            <Field
-              className="formik-input1"
-              id="firstName"
-              name="firstName"
-              placeholder="Jane"
-              onChange={handleChange}
-            />
 
-            <label htmlFor="lastName">Sube tu diseño</label>
-            <Field
-              className="formik-input2"
-              accept="application/pdf, .pdf"
-              multiple
-              type="file"
-              id="lastName"
-              name="lastName"
-              placeholder="Doe"
-              onChange={handleChange}
-            />
+            <fieldset>
+              <legend>Datos del cliente</legend>
+              <section>
+                <label htmlFor="name">Nombre</label>
+                <Field
+                  className="form-input formik-input1"
+                  id="firstName"
+                  name="firstName"
+                  placeholder="Jane"
+                  onChange={handleChange}
+                />
+              </section>
 
-            <label className="formik-input3" htmlFor="email">
-              Email
-            </label>
+              <section>
+                <label className="formik-input3" htmlFor="email">
+                  Email
+                </label>
+                <Field
+                  id="email"
+                  name="email"
+                  placeholder="jane@acme.com"
+                  type="email"
+                  className="form-input"
+                />
+              </section>
+
+
+              <section>
+                <label htmlFor="lastName">Celular</label>
+                <Field
+                  className="formik-input2"
+                  accept="application/pdf, .pdf"
+                  multiple
+                  type="number"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Doe"
+                  onChange={handleChange}
+                />
+              </section>
+
+              
+            </fieldset>
+
+            <section>
+              <label htmlFor="lastName">Sube tu diseño</label>
+              <Field
+                className="formik-input2"
+                accept="application/pdf, .pdf"
+                multiple
+                type="file"
+                id="lastName"
+                name="lastName"
+                placeholder="Doe"
+                onChange={handleChange}
+              />
+            </section>
             <Field
               id="email"
               name="email"
               placeholder="jane@acme.com"
-              type="email"b
+              type="checkbox"
+              className="form-input"
             />
 
             {
               /* ----- CAPTAR ERRORES  ----- */
               touched.email &&
-                (errors.email ? (
-                  <div className="error">
-                    <p>{errors.email}</p>
-                    <ErrorMessage component={msj} name="email" />{" "}
-                    {/*name es la propiedad del esquema  --- component permite personalizar el mensaje*/}
-                  </div>
-                ) : (
-                  <div className="error">
-                    <p>check</p>
-                  </div>
-                ))
+              (errors.email ? (
+                <div className="error">
+                  <p>{errors.email}</p>
+                  <ErrorMessage component={msj} name="email" />{" "}
+                  {/*name es la propiedad del esquema  --- component permite personalizar el mensaje*/}
+                </div>
+              ) : (
+                <div className="error">
+                  <p>check</p>
+                </div>
+              ))
             }
             <button type="submit" className="formik-button">
               Enviar

@@ -40,3 +40,9 @@ code {
   min-height: 100vh;
 }
 
+.background-custom{
+  background-image: url(../src/assets/img/Background-custom.svg);
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+}

@@ -3,7 +3,7 @@ import './Title.css'
 
 function Title(props) {
   return (
-    <h2 className='title'>{props.title}</h2>
+    <h2 className='title' style={{color: props.color}}>{props.title}</h2>
   )
 }
 
