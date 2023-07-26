@@ -8,6 +8,7 @@
     margin: 2% 0 0 2%;
     border-radius: 50%;
     box-shadow: 5px 5px 50px white;
+    max-width: 80vw;
 }
 
 .home-section1-info {
@@ -16,14 +17,34 @@
 
 .home-title {
     font-family: 'Faster One';
-    font-size: 4rem;
+    font-size: 2.5rem;
     color: #18B9C3
 }
 
 .home-section1-info-btn{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+@media screen and (width >=800px) {
+
+    .home-section1 {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    
+    .home-section1-info-btn{
+        flex-direction: row;
+    }
+
+    .home-title {
+        font-size: 3rem;
+    }
+
+    .home-section1-gif {
+        width: 30%;
+    }
 }
 
 @media screen and (width >=1024px) {
@@ -32,9 +53,6 @@
         font-size: 6rem;
     }
 
-    .home-section1 {
-        flex-direction: row;
-    }
 
     .home-section1-gif {
         margin: 2% 0 0 2%;

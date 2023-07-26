@@ -1,6 +1,7 @@
 import React from 'react'
 import './Home.css'
 import Button from "../Globals/Button/Button";
+import { pathRoutes } from '../../routes/PathRoutes';
 
 function Section1() {
     return (
@@ -9,8 +10,8 @@ function Section1() {
             <article className='home-section1-info'>
                 <h1 className="home-title">NayaSport</h1>
                 <aside className='home-section1-info-btn'>
-                    <Button text='Personalizado' />
-                    <Button text='Tienda Virtual' />
+                    <Button path={pathRoutes.custom} text='Personalizado' />
+                    <Button path={pathRoutes.uniforms} text='Tienda Virtual' />
                 </aside>
             </article>
         </section>

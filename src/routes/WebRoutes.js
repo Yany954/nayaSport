@@ -7,6 +7,7 @@ import Contact from "../pages/Contact";
 import Accesories from "../pages/Accesories";
 import Uniform from "../pages/Uniform";
 import PrivacyPolicies from "../pages/PrivacyPolicies";
+import Custom from "../pages/Custom";
 
 function WebRoutes() {
   return (
@@ -19,6 +20,7 @@ function WebRoutes() {
         <Route path={pathRoutes.contact} Component={Contact}></Route>
         <Route path={pathRoutes.uniform} Component={Uniform}></Route>
         <Route path={pathRoutes.privacy} Component={PrivacyPolicies}></Route>
+        <Route path={pathRoutes.custom} Component={Custom}></Route>
       </Routes>
     </BrowserRouter>
   );
