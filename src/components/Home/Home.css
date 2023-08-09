@@ -36,6 +36,7 @@
     
     .home-section1-info-btn{
         flex-direction: row;
+        justify-content:space-around;
     }
 
     .home-title {

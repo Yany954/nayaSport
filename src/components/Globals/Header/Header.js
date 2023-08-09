@@ -11,8 +11,9 @@ import Typography from "@mui/material/Typography";
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../../assets/img/logo.svg";
-import { pages } from "../../../routes/PathRoutes";
+import { pages, pathRoutes } from "../../../routes/PathRoutes";
 import "./Header.css";
+import { ThemeProvider, createTheme } from "@mui/material";
 
 
 function Header() {
@@ -25,13 +26,25 @@ function Header() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+  
+  const theme = createTheme({
+    palette: {
+      nayablue: {
+        main: '#00ffff',
+        light: '#E9DB5D',
+        dark: '#A29415',
+        contrastText: '#242105',
+      },
+    },
+  });
 
 
   return (
+    <ThemeProvider theme={theme}>
     <AppBar className="container-navbar" color="transparent" position="static">
-      <Container maxWidth="xl" className="navbar">
+      <Container className="navbar" maxWidth='false'>
         <Toolbar>
-          <Link to="/">
+          <Link to={pathRoutes.home}>
             <Box
               className="navbar-logo"
               component="img"
@@ -54,7 +67,7 @@ function Header() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color= "warning"
+              color= "nayablue"
             >
               <MenuIcon />
             </IconButton>
@@ -117,6 +130,7 @@ function Header() {
         </Toolbar>
       </Container>
     </AppBar>
+    </ThemeProvider>
   );
 }
 export default Header;

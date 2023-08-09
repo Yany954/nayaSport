@@ -3,9 +3,9 @@ export const pathRoutes = {
   accesories: "/accesorios",
   uniforms: "/uniformes",
   uniform: "/uniforme/:id",
-  customers: "/customers",
+  customers: "/cleintes",
   contact: "/contactanos",
-  privacy: "/privacy",
+  privacy: "/privacidad",
   custom: "/personalizados",
 };
 
