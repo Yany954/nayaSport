@@ -1,5 +1,10 @@
+.container-navbar{
+    background-color: #00ffff;
+}
+
 .navbar{
     background-color: #535353a8;
+    min-width: 100%;
 }
 
 .navbar-logo{

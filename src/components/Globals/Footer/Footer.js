@@ -3,6 +3,7 @@ import Logo from '../../../assets/img/logo.svg';
 import './Footer.css';
 import { Link } from 'react-router-dom';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import { pathRoutes } from '../../../routes/PathRoutes';
 
 function Footer() {
     return (
@@ -36,7 +37,7 @@ function Footer() {
                 <article>
                     <p>
                         <span className='footer-bottom-name'>NayaSport 2023 | </span>
-                        <Link className='footer-bottom-link' to='/politicas'> Términos y condiciones</Link>
+                        <Link className='footer-bottom-link' to={pathRoutes.privacy}> Términos y condiciones</Link>
                     </p>
                 </article>
                 <article>
