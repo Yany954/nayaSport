@@ -8,6 +8,7 @@ import Accesories from "../pages/Accesories";
 import Uniform from "../pages/Uniform";
 import PrivacyPolicies from "../pages/PrivacyPolicies";
 import Custom from "../pages/Custom";
+import Login from "../pages/Login";
 
 function WebRoutes() {
   return (
@@ -21,6 +22,7 @@ function WebRoutes() {
         <Route path={pathRoutes.uniform} Component={Uniform}></Route>
         <Route path={pathRoutes.privacy} Component={PrivacyPolicies}></Route>
         <Route path={pathRoutes.custom} Component={Custom}></Route>
+        <Route path={pathRoutes.login} Component={Login}></Route>
       </Routes>
     </BrowserRouter>
   );

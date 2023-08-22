@@ -6,12 +6,14 @@ import Footer from '../components/Globals/Footer/Footer';
 import WhatsApp from '../components/Globals/WhatsApp/WhatsApp';
 import SquareCard from '../components/Globals/SquareCard/SquareCard';
 import Slider from '../components/Uniforms/Slider';
+import Search from '../components/Globals/Search/Search';
 
 
 function Uniforms() {
   return (
     <div className='container-background'>
       <Header />
+      <Search />
       <Title  title='UNIFORMES' />
       <RoundCard />
       <SquareCard />
