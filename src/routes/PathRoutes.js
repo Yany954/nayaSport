@@ -3,7 +3,7 @@ export const pathRoutes = {
   accesories: "/accesorios",
   uniforms: "/uniformes",
   uniform: "/uniforme/:id",
-  customers: "/cleintes",
+  customers: "/clientes",
   contact: "/contactanos",
   privacy: "/privacidad",
   custom: "/personalizados",
