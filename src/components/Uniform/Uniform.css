@@ -15,6 +15,7 @@
     /* Agrega estilos para cada sección (fila) */
   }
   
+  
   .image {
     flex: 1;
     /* Agrega estilos para la sección de imagen */
@@ -96,7 +97,7 @@
   .square-cards{
     display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 15px;
+  grid-gap: 10px;
   }
   .square-card{
     position: relative;
@@ -202,9 +203,23 @@
   }
   @media screen and (width >= 770px ) {
     
-
+    .section-image-tallas {
+      display: flex;
+      
+      flex-direction: row;
+      justify-content: space-around;
+      margin: 20px 0;
+      align-items: center;
+    }
+    .square-cards{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;      
+      align-items: center;
+    }
+    
   }
   @media screen and (width >= 1024px ) {
-
+    
   }
   

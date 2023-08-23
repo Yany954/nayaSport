@@ -6,6 +6,7 @@ import Uniforme from '../../assets/img/UniformeEAN.svg';
 function Details() {
   return (
     <section className='details'>
+      <div className='section-image-tallas'>
       <div className='section'>
         <div className='image'>
           <article className='round-card'>
@@ -19,6 +20,7 @@ function Details() {
           <span className='amount'>150.000</span>
         </div>
       </div>
+      <div className='section-image-details'>
       <div className='section'>
         <div className='size'>
           <Title title='Tallas' />
@@ -44,8 +46,12 @@ function Details() {
             
           </div>
           
+          
           <a className='section-guia-tallas' href="">&gt;&gt;Guía de tallas</a>
         </div>
+        </div>
+        </div>
+        <div className='section'>
         <div className='uniform'>
           <Title title='Uniforme' />
           <div className='square-cards'>
@@ -60,11 +66,13 @@ function Details() {
             </section>
             </div>
             </div>
-          
+            </div>
         </div>
-      </div>
+        
       <div className='section'>
+      <div className='section-image-details'>
         <div className='section-btns'>
+          
           <button className='btn'>+</button>
           <input type='number' className='quantity' />
           <button className='btn'>-</button>
@@ -76,6 +84,9 @@ function Details() {
           <span className='amount'>550.000</span>
         </div>
       </div>
+      </div>
+      </div>
+      
     </section>
   );
 }
