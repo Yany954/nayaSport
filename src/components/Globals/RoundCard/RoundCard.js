@@ -1,6 +1,7 @@
 import React from 'react';
 import Uniforme from '../../../assets/img/UniformeEAN.svg'
 import './RoundCard.css'
+
 function RoundCard() {
     return (
         <article className='round-card'>

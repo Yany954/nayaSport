@@ -3,25 +3,32 @@
     flex-direction: column;
     align-items: center;
     max-width: 320px;
+    margin: 0;
 }
 
 .round-card-vector{
     background-image: url(../../../assets/img/WhiteCircle.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    width:100% ;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.round-card-vector img{
+    width: 90%;
 }
 
 .round-card-description{
     color: var(--secondary-color-text);
     font-family: 'Source Code Pro', monospace;
     text-align: center;
+    font-size: 2rem;
 }
 
 .round-card-price{
     font-family: 'Source Code Pro', monospace;
     color: var(--text-color-price);
     text-align: center;
+    font-size: 1.5rem;
 }

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import RoundCard from '../Globals/RoundCard/RoundCard';
 import { pathRoutes } from '../../routes/PathRoutes';
 import { Link } from 'react-router-dom';
+import './Accesories.css';
 
 const data = [
     {
@@ -76,8 +77,8 @@ const AccesoriesGrid = () => {
 
             dataSource={data}
             renderItem={(item) => (
-                <List.Item>
-                    <Link to={pathRoutes.uniform}><RoundCard /> </Link> 
+                <List.Item > 
+                    <Link className='accesories-cards-link' to={pathRoutes.uniform}><RoundCard /> </Link> 
                 </List.Item>
             )}
         />
