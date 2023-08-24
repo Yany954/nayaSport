@@ -33,7 +33,6 @@ function SliderHome() {
         disableOnInteraction: false,
       }}
       loop={true}
-
       effect={'cube'}
       grabCursor={true}
       cubeEffect={{
@@ -43,13 +42,7 @@ function SliderHome() {
       }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
-
-    
       slidesPerView={1}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-  
     >
 
       <SwiperSlide className='swiper-slide swiper-slide1'>

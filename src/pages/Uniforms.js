@@ -7,6 +7,8 @@ import WhatsApp from '../components/Globals/WhatsApp/WhatsApp';
 import SquareCard from '../components/Globals/SquareCard/SquareCard';
 import Slider from '../components/Uniforms/Slider';
 import Search from '../components/Globals/Search/Search';
+import Filter from '../components/Globals/Filters/Filter';
+import AccesoriesGrid from '../components/Accesories/AccesoriesGrid';
 
 
 function Uniforms() {
@@ -15,7 +17,8 @@ function Uniforms() {
       <Header />
       <Search />
       <Title  title='UNIFORMES' />
-      <RoundCard />
+      <Filter />
+      <AccesoriesGrid />
       <SquareCard />
       <Title  title='También te puede interesar' />
       <Slider />

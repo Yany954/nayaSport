@@ -30,7 +30,7 @@ useEffect(() => {
     <Swiper
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={50}
+      spaceBetween={0}
       slidesPerView={screen}
       navigation
       pagination={{ clickable: true }}

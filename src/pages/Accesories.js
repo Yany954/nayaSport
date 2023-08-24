@@ -6,15 +6,16 @@ import SubMenu from '../components/Globals/Header/SubMenu'
 import AccesoriesGrid from '../components/Accesories/AccesoriesGrid'
 import Filter from '../components/Globals/Filters/Filter'
 import Navbar from '../components/Admin/AdminNavbar/Navbar'
+import SearchBox from '../components/Globals/Search/Search'
 
 function Accesories() {
   return (
     <div className='container-background'>
       <Header />
       <SubMenu />
-      <AccesoriesGrid />
+      <SearchBox />
       <Filter />
-      <Navbar />
+      <AccesoriesGrid />
       <Footer />
       <WhatsApp />
     </div>

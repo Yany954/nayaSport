@@ -3,44 +3,33 @@ import { Checkbox } from 'antd';
 const onChange = (checkedValues) => {
   console.log('checked = ', checkedValues);
 };
-const plainOptions = ['Molten', 'Pear', 'Orange'];
+const plainOptions = ['Molten', 'Kmila'];
 const options = [
   {
-    label: 'Molten',
-    value: 'Molten',
+    label: 'Ropa deportiva',
+    value: 'Ropa deportiva',
   },
   {
-    label: 'Pear',
-    value: 'Pear',
+    label: 'Accesorios',
+    value: 'Accesorios',
   },
-  {
-    label: 'Orange',
-    value: 'Orange',
-  },
+  
 ];
 const optionsWithDisabled = [
-  {
-    label: 'Apple',
-    value: 'Apple',
-  },
-  {
-    label: 'Pear',
-    value: 'Pear',
-  },
-  {
-    label: 'Orange',
-    value: 'Orange',
-    disabled: false,
-  },
+ 
 ];
 const Filter = () => (
   <>
+    <h3>Marca</h3>
     <Checkbox.Group options={plainOptions} defaultValue={['Apple']} onChange={onChange} />
     <br />
     <br />
+
+    <h3>Categorias</h3>
     <Checkbox.Group options={options} defaultValue={['Pear']} onChange={onChange} />
     <br />
     <br />
+
     <Checkbox.Group
       options={optionsWithDisabled}
       disabled

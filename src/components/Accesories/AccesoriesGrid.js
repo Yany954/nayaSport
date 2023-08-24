@@ -1,6 +1,8 @@
 import { List, Radio, Space } from 'antd';
 import { useState } from 'react';
 import RoundCard from '../Globals/RoundCard/RoundCard';
+import { pathRoutes } from '../../routes/PathRoutes';
+import { Link } from 'react-router-dom';
 
 const data = [
     {
@@ -51,51 +53,12 @@ const alignOptions = ['start', 'center', 'end'];
 
 const AccesoriesGrid = () => {
 
-    const [position, setPosition] = useState('bottom');
+    const [position, setPosition] = useState('both');
     const [align, setAlign] = useState('center');
 
     return(
-    <>
-        <Space
-            direction="vertical"
-            style={{
-                marginBottom: '20px',
-            }}
-            size="middle"
-        >
-            <Space>
-                <span>Pagination Position:</span>
-                <Radio.Group
-                    optionType="button"
-                    value={position}
-                    onChange={(e) => {
-                        setPosition(e.target.value);
-                    }}
-                >
-                    {positionOptions.map((item) => (
-                        <Radio.Button key={item} value={item}>
-                            {item}
-                        </Radio.Button>
-                    ))}
-                </Radio.Group>
-            </Space>
-            <Space>
-                <span>Pagination Align:</span>
-                <Radio.Group
-                    optionType="button"
-                    value={align}
-                    onChange={(e) => {
-                        setAlign(e.target.value);
-                    }}
-                >
-                    {alignOptions.map((item) => (
-                        <Radio.Button key={item} value={item}>
-                            {item}
-                        </Radio.Button>
-                    ))}
-                </Radio.Group>
-            </Space>
-        </Space>
+    <section className='accesories-cards'>
+        
         <List
          pagination={{
             position,
@@ -114,11 +77,11 @@ const AccesoriesGrid = () => {
             dataSource={data}
             renderItem={(item) => (
                 <List.Item>
-                    <RoundCard />
+                    <Link to={pathRoutes.uniform}><RoundCard /> </Link> 
                 </List.Item>
             )}
         />
-    </>
+        </section>
     )
 };
 

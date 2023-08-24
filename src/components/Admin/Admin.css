@@ -1,0 +1,10 @@
+.admin-nav{
+    width: 256px;
+    height: 100vh;
+}
+
+.admin-menu{
+    background-color: rgba(182, 182, 182, 0.479);
+    backdrop-filter: blur(10px);
+    height: 100vh;
+}
