@@ -7,6 +7,8 @@ export const pathRoutes = {
   contact: "/contactanos",
   privacy: "/privacidad",
   custom: "/personalizados",
+  login: "/login",
+  admin: "/admin"
 };
 
 export const pages = [
