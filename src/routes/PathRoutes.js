@@ -2,7 +2,7 @@ export const pathRoutes = {
   home: "/",
   accesories: "/accesorios",
   uniforms: "/uniformes",
-  uniform: "/uniforme/:id",
+  uniform: "/uniforme",
   customers: "/clientes",
   contact: "/contactanos",
   privacy: "/privacidad",

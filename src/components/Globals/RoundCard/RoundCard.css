@@ -8,7 +8,7 @@
 
 .round-card-vector{
     background-image: url(../../../assets/img/WhiteCircle.svg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
