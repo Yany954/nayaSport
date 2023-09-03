@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios'; 
 
-import './Login.css';
+
+import '../Login.css';
+
 export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
