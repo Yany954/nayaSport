@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios'; // Importa Axios
+import axios from 'axios'; 
+
+import './Login.css'; 
 
 export default function Login() {
   const [username, setUsername] = useState('');
@@ -10,8 +12,8 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('/api/login', { username, password }); 
-      
+      const response = await axios.post('/api/login', { username, password });
+
       if (response.data.success) {
         window.location.href = '/';
       } else {
@@ -24,7 +26,7 @@ export default function Login() {
   };
 
   return (
-    <div className='container-background'>
+    <div className='login-container'>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Usuario</label>
