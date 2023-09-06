@@ -13,3 +13,28 @@ legend{
     border: solid 0.2em var(--secondary-color-text);
 
 }
+.container-formik Form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+}
+.container-formik section{
+    margin-bottom: 10px;
+}
+.formik-button {
+    background-color: var(--secondary-color-text);
+    color: white;
+    padding: 10px 20px; /* Ajusta los valores para cambiar el tamaño */
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .formik-button:hover {
+    background-color: darkblue;
+  }
+  
