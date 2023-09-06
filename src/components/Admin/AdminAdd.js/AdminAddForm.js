@@ -5,16 +5,15 @@ function AdminAddForm() {
 
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <form >
         <input
           required
           type="text"
           placeholder="Referencia"
           name="ref"
-          onChange={HandleChange}
-          value={product.ref}
+         
         />
-        <select required name='category' onChange={HandleChange}>
+        <select required name='category' >
           <option disabled>Categoria</option>
           <option value="1">Accesorios deportivos</option>
           <option value="2">Ropa deportiva</option>
@@ -28,44 +27,37 @@ function AdminAddForm() {
           type="text"
           placeholder="Nombre del producto"
           name="productName"
-          onChange={HandleChange}
-          value={product.productName}
+          
         />
         <input
           type="text"
           placeholder="Precio de adquisición"
           name="priceBuy"
-          onChange={HandleChange}
-          value={product.priceBuy}
+          
         />
         <input
           type="text"
           placeholder="precio de venta"
           name="priceSale"
-          onChange={HandleChange}
-          value={product.priceSale}
+        
         />
 
         <input
           type="text"
           placeholder="Dimensiones/ tallaje"
           name="size"
-          onChange={HandleChange}
-          value={product.size}
+          
         />
 
         <textarea
           name="description"
-          onChange={HandleChange}
-          value={product.description}
+        
         ></textarea>
 
         <input
           name="image"
           type="file"
           accept=".png"
-          value={product.image}
-          onChange={HandleChange}
         />
 
         <button>Agregar</button>
