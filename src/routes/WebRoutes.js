@@ -21,7 +21,7 @@ function WebRoutes() {
         <Route path={pathRoutes.accesories} Component={Accesories}></Route>
         <Route path={pathRoutes.customers} Component={Customers}></Route>
         <Route path={pathRoutes.contact} Component={Contact}></Route>
-        <Route path={pathRoutes.uniform} Component={Uniform}></Route>
+        <Route path={`${pathRoutes.uniform}/:id`} Component={Uniform}></Route>
         <Route path={pathRoutes.privacy} Component={PrivacyPolicies}></Route>
         <Route path={pathRoutes.custom} Component={Custom}></Route>
         <Route path={pathRoutes.login} Component={Login}></Route>
