@@ -31,7 +31,7 @@ const CustomForm = () => (
         email: "",
         phone: "",
         country: "",
-        City: "",
+        city: "",
         typeClothing: "",
         quantity: "",
         quantityLogos: "",
@@ -96,13 +96,80 @@ const CustomForm = () => (
               <section>
                 <label htmlFor="lastName">Celular</label>
                 <Field
-                  className="formik-input2"
+                  className="form-input formik-input2"
                   accept="application/pdf, .pdf"
                   multiple
                   type="number"
-                  id="lastName"
-                  name="lastName"
-                  placeholder="Doe"
+                  id="phone"
+                  name="phone"
+                  placeholder="+57 123 456 78 90"
+                  onChange={handleChange}
+                />
+              </section>
+              <section>
+              <label htmlFor="name">País</label>
+                <Field
+                  className="form-input formik-input1"
+                  id="country"
+                  name="country"
+                  type="text"
+                  placeholder="Colombia"
+                  onChange={handleChange}
+                />
+              </section>
+              <section>
+              <label htmlFor="name">Ciudad</label>
+                <Field
+                  className="form-input formik-input1"
+                  id="city"
+                  name="city"
+                  type="text"
+                  placeholder="Colombia"
+                  onChange={handleChange}
+                />
+              </section>
+
+              
+            </fieldset>
+
+            <fieldset>
+              <legend>Datos del diseño</legend>
+              <section>
+                <label htmlFor="name">Tipo de prenda</label>
+                <Field
+                  className="form-input formik-input1"
+                  id="typeClothing"
+                  name="typeClothing"
+                  type="text"
+                  placeholder="Sudadera"
+                  onChange={handleChange}
+                />
+              </section>
+
+              <section>
+                <label className="formik-input3" htmlFor="email">
+                  Cantidad
+                </label>
+                <Field
+                  id="quantity"
+                  name="quantity"
+                  placeholder="1"
+                  type="number"
+                  className="form-input"
+                />
+              </section>
+
+
+              <section>
+                <label htmlFor="lastName">Cantidad logotipos</label>
+                <Field
+                  className="form-input formik-input2"
+                  accept="application/pdf, .pdf"
+                  multiple
+                  type="number"
+                  id="quantityLogos"
+                  name="quantityLogos"
+                  placeholder="1"
                   onChange={handleChange}
                 />
               </section>
@@ -117,19 +184,27 @@ const CustomForm = () => (
                 accept="application/pdf, .pdf"
                 multiple
                 type="file"
-                id="lastName"
-                name="lastName"
+                id="uploadDesign"
+                name="uploadDesign"
                 placeholder="Doe"
                 onChange={handleChange}
+                title="Adjuntar"
               />
             </section>
-            <Field
-              id="email"
-              name="email"
-              placeholder="jane@acme.com"
-              type="checkbox"
-              className="form-input"
-            />
+            <section>
+              <label htmlFor="lastName">Sube tus logos</label>
+              <Field
+                className="formik-input2"
+                accept="application/pdf, .pdf"
+                multiple
+                type="file"
+                id="uploadLogos"
+                name="uploadLogos"
+                placeholder="Doe"
+                onChange={handleChange}
+                title="Adjuntar"
+              />
+            </section>
 
             {
               /* ----- CAPTAR ERRORES  ----- */

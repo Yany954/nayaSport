@@ -1,0 +1,7 @@
+.filter-container{
+    padding: 1% 3%;
+}
+.filter-title{
+    font-family: var(--monserrat-font);
+    color: var(--primary-color-title);
+}

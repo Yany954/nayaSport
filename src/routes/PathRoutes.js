@@ -2,13 +2,14 @@ export const pathRoutes = {
   home: "/",
   accesories: "/accesorios",
   uniforms: "/uniformes",
-  uniform: "/uniforme/:id",
+  uniform: "/uniforme",
   customers: "/clientes",
   contact: "/contactanos",
   privacy: "/privacidad",
   custom: "/personalizados",
   login: "/login",
-  admin: "/admin"
+  admin: "/admin",
+  adminAdd:"/adminAdd"
 };
 
 export const pages = [
