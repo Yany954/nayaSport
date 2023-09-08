@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import axios from "axios"; // Importa Axios
-import "./AdminAddForm.css"; // Importa el archivo CSS
+import axios from "axios";
+import "./AdminAddForm.css";
 import Title from "../../Globals/Title/Title";
 
 function AdminAddForm2() {
@@ -18,7 +18,6 @@ function AdminAddForm2() {
   });
 
   const handleAddImageClick = () => {
-    // Activa el input de imagen cuando se hace clic en "Agregar imagen"
     imageInputRef.current.click();
   };
 
@@ -35,7 +34,11 @@ function AdminAddForm2() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("/api/agregar_producto", formData);
+      const response = await axios.post("/api/agregar_producto", formData, {
+        headers: {
+        },
+      });
+
       console.log("Respuesta del servidor:", response.data);
     } catch (error) {
       console.error("Error al agregar producto:", error);
@@ -44,7 +47,11 @@ function AdminAddForm2() {
 
   const handleUpdate = async () => {
     try {
-      const response = await axios.put("/api/actualizar_producto", formData);
+      const response = await axios.put("/api/actualizar_producto", formData, {
+        headers: {
+        },
+      });
+
       console.log("Respuesta del servidor:", response.data);
     } catch (error) {
       console.error("Error al actualizar producto:", error);
