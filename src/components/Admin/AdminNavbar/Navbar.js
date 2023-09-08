@@ -1,15 +1,17 @@
-import {
-    AppstoreOutlined,
-    ContainerOutlined,
-    DesktopOutlined,
-    MailOutlined,
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
-    PieChartOutlined,
-} from '@ant-design/icons';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Menu } from 'antd';
 import { useState } from 'react';
-import '../Admin.css'
+import '../Admin.css';
+import {
+  AppstoreOutlined,
+  ContainerOutlined,
+  DesktopOutlined,
+  MailOutlined,
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  PieChartOutlined,
+} from '@ant-design/icons';
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -20,6 +22,7 @@ function getItem(label, key, icon, children, type) {
     type,
   };
 }
+
 const items = [
   getItem('Inventario', '1', <PieChartOutlined />),
   getItem('Añadir', '2', <DesktopOutlined />),
@@ -36,17 +39,16 @@ const items = [
     getItem('Submenu', 'sub3', null, [getItem('Option 11', '11'), getItem('Option 12', '12')]),
   ]),
 ];
+
 const Navbar = () => {
   const [collapsed, setCollapsed] = useState(false);
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
+
   return (
     <div className='admin-nav'>
-      <Button
-        type="primary"
-        onClick={toggleCollapsed}
-      >
+      <Button type="primary" onClick={toggleCollapsed}>
         {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
       </Button>
       <Menu
@@ -55,9 +57,18 @@ const Navbar = () => {
         mode="inline"
         theme="light"
         inlineCollapsed={collapsed}
-        items={items}
         className='admin-menu'
-      />
+      >
+        {items.map(item => (
+          <Menu.Item key={item.key}>
+            {item.key === '2' ? (
+              <Link to="/adminAdd">{item.label}</Link>
+            ) : (
+              <>{item.label}</>
+            )}
+          </Menu.Item>
+        ))}
+      </Menu>
     </div>
   );
 };

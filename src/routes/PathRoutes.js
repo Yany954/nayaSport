@@ -8,7 +8,8 @@ export const pathRoutes = {
   privacy: "/privacidad",
   custom: "/personalizados",
   login: "/login",
-  admin: "/admin"
+  admin: "/admin",
+  adminAdd:"/adminAdd"
 };
 
 export const pages = [

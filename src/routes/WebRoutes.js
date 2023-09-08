@@ -10,6 +10,7 @@ import PrivacyPolicies from "../pages/PrivacyPolicies";
 import Custom from "../pages/Custom";
 import Login from "../pages/Login";
 import DashboardAdmin from "../pages/DashboardAdmin";
+import DashboardAdminAdd from "../pages/DashboardAdminAdd";
 
 
 function WebRoutes() {
@@ -27,7 +28,7 @@ function WebRoutes() {
         <Route path={pathRoutes.login} Component={Login}></Route>
         <Route path={pathRoutes.admin} Component={DashboardAdmin}></Route>
         <Route path={pathRoutes.uniform} Component={Uniform}></Route>
-
+        <Route path={pathRoutes.adminAdd} Component={DashboardAdminAdd}></Route>
       </Routes>
     </BrowserRouter>
   );
