@@ -1,15 +1,15 @@
+import React, { useState } from 'react';
 import {
-    AppstoreOutlined,
-    ContainerOutlined,
-    DesktopOutlined,
-    MailOutlined,
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
-    PieChartOutlined,
+  AppstoreOutlined,
+  ContainerOutlined,
+  DesktopOutlined,
+  MailOutlined,
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  PieChartOutlined,
 } from '@ant-design/icons';
 import { Button, Menu } from 'antd';
-import { useState } from 'react';
-import '../Admin.css'
+import '../Admin.css';
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -20,6 +20,7 @@ function getItem(label, key, icon, children, type) {
     type,
   };
 }
+
 const items = [
   getItem('Inventario', '1', <PieChartOutlined />),
   getItem('Añadir', '2', <DesktopOutlined />),
@@ -36,17 +37,22 @@ const items = [
     getItem('Submenu', 'sub3', null, [getItem('Option 11', '11'), getItem('Option 12', '12')]),
   ]),
 ];
+
 const Navbar = () => {
   const [collapsed, setCollapsed] = useState(false);
+
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
+
+  // backend
+  const handleUpdate = () => {
+    // CODIGO BACKEND ACA
+  };
+
   return (
-    <div className='admin-nav'>
-      <Button
-        type="primary"
-        onClick={toggleCollapsed}
-      >
+    <div className="admin-nav">
+      <Button type="primary" onClick={toggleCollapsed}>
         {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
       </Button>
       <Menu
@@ -56,8 +62,12 @@ const Navbar = () => {
         theme="light"
         inlineCollapsed={collapsed}
         items={items}
-        className='admin-menu'
+        className="admin-menu"
       />
+      {/* FALTA BOTON */}
+      <Button type="primary" onClick={handleUpdate}>
+        Actualizar
+      </Button>
     </div>
   );
 };
