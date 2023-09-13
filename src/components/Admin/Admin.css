@@ -8,3 +8,16 @@
     backdrop-filter: blur(10px);
     height: 100vh;
 }
+
+.input-id{
+    background: transparent;
+    width: 5%;
+}
+
+.list-container{
+    width: 100%;
+}
+
+.list-item{
+    display: flex;
+}

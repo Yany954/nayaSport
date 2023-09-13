@@ -9,7 +9,9 @@ export const pathRoutes = {
   custom: "/personalizados",
   login: "/login",
   admin: "/admin",
-  adminAdd:"/adminAdd"
+  adminAdd:"/add",
+  adminDelete:"/delete",
+  adminUpdate:"/update"
 };
 
 export const pages = [
