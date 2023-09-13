@@ -3,12 +3,6 @@ import "./AdminAddForm.css"; // Importa el archivo CSS
 import Title from "../../Globals/Title/Title";
 
 function AdminAddForm2() {
-  const imageInputRef = useRef(null);
-
-  const handleAddImageClick = () => {
-    // Activa el input de imagen cuando se hace clic en "Agregar imagen"
-    imageInputRef.current.click();
-  };
   return (
     <section className="form-container">
       <form className="form-add">
@@ -68,10 +62,10 @@ function AdminAddForm2() {
           rows="4"
           cols="50"
         ></textarea>
-        <input name="image" type="file" accept=".png" className="input-image" />
-        <button onClick={handleAddImageClick} className="formAdd-button1">
-          Subir imagen
-        </button>
+        <input name="image" 
+        type="file" 
+        accept=".png" 
+        className="input-image" />
         <section className="formAddButtonContainer">
           <button className="formAdd-button2">GUARDAR</button>
         </section>

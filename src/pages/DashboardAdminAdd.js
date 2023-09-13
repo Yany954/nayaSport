@@ -6,7 +6,7 @@ import AdminAddForm2 from '../components/Admin/AdminAdd.js/AdminAddForm2'
 function DashboardAdminAdd() {
   return (
     <div className='container-background'>
-      <AdminAddForm />
+      <AdminAddForm2 />
 
     </div>
   )
