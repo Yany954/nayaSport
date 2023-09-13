@@ -4,19 +4,18 @@ import { CloudUpload } from "@mui/icons-material";
 import Title from "../../Globals/Title/Title";
 import axios from 'axios';
 
-
 function AdminAddForm() {
   const imageInputRef = useRef(null);
 
   const handleAddImageClick = () => {
-      imageInputRef.current.click();
+    imageInputRef.current.click();
   };
 
   const handleImageChange = (event) => {
     const selectedFile = event.target.files[0];
 
     if (selectedFile) {
-            const fileName = selectedFile.name;
+      const fileName = selectedFile.name;
 
       const fileDisplay = document.getElementById("file-display");
       if (fileDisplay) {
@@ -27,31 +26,19 @@ function AdminAddForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
-    const formData = {
-      ref: event.target.ref.value,
-      category: event.target.category.value,
-      productName: event.target.productName.value,
-      priceBuy: event.target.priceBuy.value,
-      priceSale: event.target.priceSale.value,
-      size: event.target.size.value,
-      brand: event.target.brand.value,
-      description: event.target.description.value,
-    };
-  
+
+    const formData = new FormData(event.target);
+
     try {
       const response = await axios.post("/api/agregar_producto", formData);
-  
+
       if (response.status === 200) {
         console.log("Datos enviados con éxito:", response.data);
-  
       }
     } catch (error) {
       console.error("Error al enviar datos del formulario:", error);
-  
     }
   };
-  
 
   return (
     <Container>
@@ -61,20 +48,6 @@ function AdminAddForm() {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
-        <Grid container spacing={2}>
-          <Grid item >
-            <TextField
-              required
-              fullWidth
-              label="Referencia"
-              placeholder="Referencia"
-              name="ref"
-            />
-          </Grid>
-          <Grid item >
-            <FormControl fullWidth>
-              <InputLabel>Categoria</InputLabel>
-              <Select
                 required
                 fullWidth
                 label="Referencia"
@@ -87,9 +60,10 @@ function AdminAddForm() {
                 <InputLabel>Categoria</InputLabel>
                 <Select
                   required
+                  fullWidth
+                  label="Categoria"
                   name="category"
                 >
-                  <MenuItem disabled>Categoria</MenuItem>
                   <MenuItem value="1">Accesorios deportivos</MenuItem>
                   <MenuItem value="2">Ropa deportiva</MenuItem>
                 </Select>
@@ -125,7 +99,6 @@ function AdminAddForm() {
                 <Select
                   name="brand"
                 >
-                  <MenuItem disabled>Marca</MenuItem>
                   <MenuItem value="Kamila">Kamila</MenuItem>
                   <MenuItem value="Molten">Molten</MenuItem>
                 </Select>
@@ -168,7 +141,6 @@ function AdminAddForm() {
               </Button>
             </Grid>
             <Grid item xs={12}>
-              {}
               <div id="file-display"></div>
             </Grid>
             <Grid item xs={12}>

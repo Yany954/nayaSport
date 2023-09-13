@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Menu } from 'antd';
-import { useState } from 'react';
 import { pathRoutes } from '../../../routes/PathRoutes';
 import '../Admin.css';
 import {
@@ -49,8 +47,7 @@ const Navbar = () => {
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
-
-<<<<<<< HEAD
+  
   const handleUpdate = () => {
     // Aquí puedes agregar tu código de backend si es necesario
   };
@@ -69,10 +66,8 @@ const Navbar = () => {
         items={items}
         className="admin-menu"
       >
-
-
         {items.map(item => (
-          <Link to={item.path}>
+          <Link to={item.path} key={item.key}>
             <Menu.Item key={item.key}>
               {item.label}
             </Menu.Item>
@@ -83,7 +78,6 @@ const Navbar = () => {
         Actualizar
       </Button>
     </div>
-    </div >
   );
 };
 
