@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Menu } from 'antd';
+import { useState } from 'react';
+import { pathRoutes } from '../../../routes/PathRoutes';
+import '../Admin.css';
 import {
   AppstoreOutlined,
   ContainerOutlined,
@@ -10,12 +14,12 @@ import {
   MenuUnfoldOutlined,
   PieChartOutlined,
 } from '@ant-design/icons';
-import '../Admin.css';
 
-function getItem(label, key, icon, children, type) {
+function getItem(label, key, icon, children, type, path) {
   return {
     key,
     icon,
+    path,
     children,
     label,
     type,
@@ -23,15 +27,15 @@ function getItem(label, key, icon, children, type) {
 }
 
 const items = [
-  getItem('Inventario', '1', <PieChartOutlined />),
-  getItem('Añadir', '2', <DesktopOutlined />),
-  getItem('Editar', '3', <ContainerOutlined />),
-  getItem('Borrar', 'sub1', <MailOutlined />, [
+  getItem('Inventario', '1', <PieChartOutlined />, '', '', pathRoutes.adminAdd),
+  getItem('Añadir', '2', <DesktopOutlined />, '', '', pathRoutes.adminAdd),
+  getItem('Editar', '3', <ContainerOutlined />, '', '', pathRoutes.adminUpdate),
+  getItem('Borrar', '4', <MailOutlined />, [
     getItem('Option 5', '5'),
     getItem('Option 6', '6'),
     getItem('Option 7', '7'),
     getItem('Option 8', '8'),
-  ]),
+  ], '', pathRoutes.adminDelete),
   getItem('Perfil', 'sub2', <AppstoreOutlined />, [
     getItem('Option 9', '9'),
     getItem('Option 10', '10'),
@@ -46,6 +50,7 @@ const Navbar = () => {
     setCollapsed(!collapsed);
   };
 
+<<<<<<< HEAD
   const handleUpdate = () => {
     // Aquí puedes agregar tu código de backend si es necesario
   };
@@ -61,22 +66,24 @@ const Navbar = () => {
         mode="inline"
         theme="light"
         inlineCollapsed={collapsed}
+        items={items}
         className="admin-menu"
       >
+
+
         {items.map(item => (
-          <Menu.Item key={item.key}>
-            {item.key === '2' ? (
-              <Link to="/adminAdd">{item.label}</Link>
-            ) : (
-              <>{item.label}</>
-            )}
-          </Menu.Item>
+          <Link to={item.path}>
+            <Menu.Item key={item.key}>
+              {item.label}
+            </Menu.Item>
+          </Link>
         ))}
       </Menu>
       <Button type="primary" onClick={handleUpdate}>
         Actualizar
       </Button>
     </div>
+    </div >
   );
 };
 

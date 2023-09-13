@@ -54,13 +54,27 @@ function AdminAddForm() {
   
 
   return (
-    <Container maxWidth="sm">
+    <Container>
       <Paper elevation={3} style={{ padding: "20px", borderRadius: "10px" }}>
         <Title title="Añadir producto" />
         <form onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
+        <Grid container spacing={2}>
+          <Grid item >
+            <TextField
+              required
+              fullWidth
+              label="Referencia"
+              placeholder="Referencia"
+              name="ref"
+            />
+          </Grid>
+          <Grid item >
+            <FormControl fullWidth>
+              <InputLabel>Categoria</InputLabel>
+              <Select
                 required
                 fullWidth
                 label="Referencia"
