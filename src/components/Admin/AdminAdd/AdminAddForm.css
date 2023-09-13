@@ -1,0 +1,88 @@
+
+.form-container {
+    width: 70%; 
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    padding: 3%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(200, 200, 200, 0.5); 
+  }
+  .formAdd-title{
+        color: var(--secondary-color-text);
+        text-align: center;
+        font-size: large;
+  }
+ 
+  .section-ref-row, .section-brand-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+  }
+.form-add {
+    background-color: transparent;
+    width: 100%;
+    border: none;
+  }
+  .select-field {
+    width: 50%;
+    padding: 10px;
+    margin: 5px 5px;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+  }
+  .input-field {
+    width: 97%;
+    padding: 1%;
+    margin: 5px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+  .input-field-row{
+    width: 50%;
+    padding: 1%;
+    margin: 5px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+  .input-image{
+    display: none;
+  }
+  
+  .formAdd-button1 {
+    background-color: var(--secondary-color-text);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .formAddButtonContainer{
+    display: flex;
+    justify-content: right;
+  }
+  .formAdd-button2 {
+    background-color: var(--secondary-color-text);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 2px;
+    font-weight: bold;
+    align-self: flex-start;
+  }
+  .formAdd-button2:hover, .formAdd-button1:hover {
+    background-color: var(--primary-color-title);
+  }
+  

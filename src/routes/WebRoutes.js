@@ -11,7 +11,8 @@ import Custom from "../pages/Custom";
 import Login from "../pages/Login";
 import DashboardAdmin from "../pages/DashboardAdmin";
 import DashboardAdminAdd from "../pages/DashboardAdminAdd";
-
+import DashboardAdminDelete from "../pages/DashboardAdminDelete";
+import DashboardAdminUpdate from "../pages/DashboardAdminUpdate";
 
 function WebRoutes() {
   return (
@@ -29,6 +30,9 @@ function WebRoutes() {
         <Route path={pathRoutes.admin} Component={DashboardAdmin}></Route>
         <Route path={pathRoutes.uniform} Component={Uniform}></Route>
         <Route path={pathRoutes.adminAdd} Component={DashboardAdminAdd}></Route>
+        <Route path={pathRoutes.adminDelete} Component={DashboardAdminDelete}></Route>
+        <Route path={pathRoutes.adminUpdate} Component={DashboardAdminUpdate}></Route>
+
       </Routes>
     </BrowserRouter>
   );

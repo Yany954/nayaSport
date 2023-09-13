@@ -1,73 +1,92 @@
-import React, { useRef } from "react";
-import "./AdminAddForm.css"; // Importa el archivo CSS
+import React, { useRef, useState } from "react";
+import axios from "axios";
+import "./AdminAddForm.css";
 import Title from "../../Globals/Title/Title";
 
 function AdminAddForm2() {
+  const imageInputRef = useRef(null);
+  const [formData, setFormData] = useState({
+    ref: "",
+    category: "",
+    productName: "",
+    priceBuy: "",
+    priceSale: "",
+    size: "",
+    brand: "",
+    description: "",
+    image: null,
+  });
+
+  const handleAddImageClick = () => {
+    imageInputRef.current.click();
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value, type, files } = e.target;
+    if (type === "file") {
+      setFormData({ ...formData, [name]: files[0] });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("/api/agregar_producto", formData, {
+        headers: {
+        },
+      });
+
+      console.log("Respuesta del servidor:", response.data);
+    } catch (error) {
+      console.error("Error al agregar producto:", error);
+    }
+  };
+
+  const handleUpdate = async () => {
+    try {
+      const response = await axios.put("/api/actualizar_producto", formData, {
+        headers: {
+        },
+      });
+
+      console.log("Respuesta del servidor:", response.data);
+    } catch (error) {
+      console.error("Error al actualizar producto:", error);
+    }
+  };
+
   return (
     <section className="form-container">
-      <form className="form-add">
+      <form className="form-add" onSubmit={handleSubmit}>
         <section className="formAdd-title">
           <h2>AÑADIR PRODUCTO</h2>
         </section>
         <section className="section-ref-row">
-          <input
-            required
-            type="text"
-            placeholder="Referencia"
-            name="ref"
-            className="input-field-row"
-          />
-          <select required name="category" className="select-field">
-            <option disabled>Categoria</option>
-            <option value="1">Accesorios deportivos</option>
-            <option value="2">Ropa deportiva</option>
-          </select>
+          {/* Campos de entrada aquí con onChange y value */}
         </section>
 
+        {/* Resto de los campos de entrada aquí, cada uno con onChange y value */}
+
         <input
-          type="text"
-          placeholder="Nombre del producto"
-          name="productName"
-          className="input-field"
+          name="image"
+          type="file"
+          accept=".png"
+          className="input-image"
+          onChange={handleInputChange}
         />
-        <input
-          type="text"
-          placeholder="Precio de adquisición"
-          name="priceBuy"
-          className="input-field"
-        />
-        <input
-          type="text"
-          placeholder="Precio de venta"
-          name="priceSale"
-          className="input-field"
-        />
-        <section className="section-brand-row">
-          <input
-            type="text"
-            placeholder="Dimensiones/ Tallaje"
-            name="size"
-            className="input-field-row"
-          />
-          <select name="brand" className="select-field">
-            <option disabled>Marca</option>
-            <option value="Kamila">Kamila</option>
-            <option value="Molten">Molten</option>
-          </select>
-        </section>
-        <textarea
-          name="description"
-          className="input-field"
-          placeholder="Descripción del producto"
-          rows="4"
-          cols="50"
-        ></textarea>
-        <input name="image" 
-        type="file" 
-        accept=".png" 
-        className="input-image" />
+        <button onClick={handleAddImageClick} className="formAdd-button1">
+          Subir imagen
+        </button>
         <section className="formAddButtonContainer">
-          <button className="formAdd-button2">GUARDAR</button>
+          <button type="submit" className="formAdd-button2">
+            GUARDAR
+          </button>
+          <button onClick={handleUpdate} className="formAdd-button2">
+            ACTUALIZAR
+          </button>
         </section>
       </form>
     </section>

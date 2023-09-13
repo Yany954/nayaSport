@@ -1,0 +1,9 @@
+.admin-layout{
+    display: flex;
+    height: 100vh;
+}
+
+.layout-navbar{
+    flex-basis: 15%;
+}
+
