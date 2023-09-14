@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios'; 
-
-
 import '../Login.css';
 
 export default function Login() {
@@ -9,14 +7,16 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('/api/login', { username, password });
+      const response = await axios.post('http://localhost:3001/api/auth/login', { 'email' : username, 'password': password });
 
-      if (response.data.success) {
-        window.location.href = '/';
+      console.log(response.status)
+      if (response.status == 200) {
+        window.location.href = '/admin';
       } else {
         setError('Credenciales incorrectas');
       }

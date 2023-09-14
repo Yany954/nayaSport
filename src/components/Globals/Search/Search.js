@@ -1,6 +1,7 @@
 import { AudioOutlined } from '@ant-design/icons';
 import { Input, Space } from 'antd';
 import './Search.css';
+import { useState } from 'react';
 const { Search } = Input;
 
 const suffix = (
@@ -13,11 +14,22 @@ const suffix = (
     />
 );
 
-function onSearch() {
-
-}
 
 function SearchBox() {
+
+
+    const [search, setSearch] = useState('');
+
+    function onSearch() {
+
+    }
+    
+    function handleChange(e){
+        setSearch(e.target.value)
+    }
+
+    console.log(search)
+
     return (
         <section className='section-search'>
             <Space direction="vertical">
@@ -27,6 +39,7 @@ function SearchBox() {
                     size="large"
                     suffix={suffix}
                     onSearch={onSearch}
+                    onChange={handleChange}
                 />
             </Space>
         </section>

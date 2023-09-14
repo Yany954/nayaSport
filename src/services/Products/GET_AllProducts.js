@@ -1,10 +1,10 @@
 import axios from "axios";
+import { base_API } from "../configAPI";
 
 function GET_AllProducts() {
     
-    const urlOrders = "http://localhost:3001/api/productos";
-    return axios.get(urlOrders);
-
+    const request = `${base_API.api}/productos`;
+    return axios.get(request);
     
 }
 

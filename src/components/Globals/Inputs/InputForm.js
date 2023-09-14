@@ -3,7 +3,7 @@ import React from "react";
 function InputForm(props) {
 
   const handleInputChange = (e) => {
-    props.setState({ ...props.state, campo: e.target.value });
+    props.setState({ ...props.state, field: e.target.value });
   };
 
  /* function validate(e) {
@@ -26,7 +26,7 @@ function InputForm(props) {
         type={props.type}
         placeholder={props.placeholder}
         id={props.id}
-        value={props.state.campo}
+        value={props.state.field}
         onChange={handleInputChange}
        /* onKeyUp={validate}
         onBlur={validate}

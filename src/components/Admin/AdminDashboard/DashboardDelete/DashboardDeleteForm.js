@@ -51,15 +51,15 @@ function DashboardDeleteForm() {
 
         Swal.fire({
           icon: 'success',
-          title: 'Producto añadido',
-          text: 'Porducto añadido con exito',
+          title: 'Producto Eliminado',
+          text: 'Producto eliminado con exito',
         })
         
       } else {
         Swal.fire({
           icon: 'error',
           title: 'Error',
-          text: 'No se ha podido añadir el producto',
+          text: 'No se ha podido eliminar el producto',
         })
       }
     }).catch(function (error) {
@@ -75,15 +75,15 @@ function DashboardDeleteForm() {
         renderItem={(item, i) => (
 
           <List.Item className='list-item' key={i}
-            actions={[<button onClick={(e) => onDelete(item[0].idProducto)} >Borrar</button>,<a key="list-loadmore-edit">edit</a>, <a key="list-loadmore-more">more</a>]}
+            actions={[<button onClick={(e) => onDelete(item.idProducto)} >Borrar</button>,<a key="list-loadmore-edit">edit</a>, <a key="list-loadmore-more">more</a>]}
           >
             <Skeleton avatar title={false} loading={false} active>
               <List.Item.Meta
                
-                avatar={<Avatar src={item[0].imagen} />}
-                title={item[0].nombre}
+                avatar={<Avatar src={item.imagen} />}
+                title={item.nombre}
               />
-              <input  className='input-id' ref={id} value={item[0].idProducto}></input>
+              <input  className='input-id' ref={id} value={item.idProducto}></input>
             </Skeleton>
           </List.Item>
 
