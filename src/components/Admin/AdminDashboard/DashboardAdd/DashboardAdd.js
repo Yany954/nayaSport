@@ -138,6 +138,7 @@ function DashboardAddForm() {
           title: 'Producto añadido',
           text: 'Producto añadido con exito',
         })
+        window.location.reload(true);
         setProduct({
           ref: '',
           priceBuy: '',
@@ -149,6 +150,7 @@ function DashboardAddForm() {
           brand: '',
           category: ''
         })
+
       } else {
         Swal.fire({
           icon: 'error',
@@ -159,6 +161,11 @@ function DashboardAddForm() {
     }).catch(function (error) {
       console.error(error);
       setProductres(error)
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'No se ha podido añadir el producto',
+      })
     });
 
   }
@@ -230,8 +237,9 @@ function DashboardAddForm() {
                 <Select
                   name="brand"
                   onChange={HandleChange}
+                  required
                 >
-                  <MenuItem disabled>Marca</MenuItem>
+                  <MenuItem disabled >Marca</MenuItem>
                   <MenuItem value="Kamila">Kamila</MenuItem>
                   <MenuItem value="Molten">Molten</MenuItem>
                 </Select>
