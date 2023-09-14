@@ -16,7 +16,8 @@ const AccesoriesGrid = () => {
   const [align, setAlign] = useState("center");
 
   const [orders, setOrders] = useState();
-  console.log(orders)
+  //console.log(JSON.stringify(orders, null, 2));
+  console.log(orders);
 
   async function getData() {
    
@@ -25,7 +26,8 @@ const AccesoriesGrid = () => {
     }).catch(function (e) {
       console.error(e);
     });
-  }
+  }  
+  
 
   useEffect(() => {
     getData();
@@ -50,10 +52,15 @@ const AccesoriesGrid = () => {
         dataSource={orders}
         renderItem={(item, i) => (
           <List.Item key={i}>
-            <Link className="accesories-cards-link" to={`${pathRoutes.uniform}/${item.idProducto}`}>
-              <RoundCard imgPath={ require(`../../assets/img/${item.imagen}`)}  product={item.nombre} price={item.precio_venta}/>
-            </Link>
-          </List.Item>
+  <Link className="accesories-cards-link" to={`${pathRoutes.uniform}/${item.idProducto}`}>
+    <RoundCard
+      imgPath={item.imagen.data}
+      product={item.nombre}
+      price={item.precio_venta}
+    />
+  </Link>
+</List.Item>
+
         )}
       />
     </section>
