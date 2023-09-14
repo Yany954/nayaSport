@@ -20,7 +20,7 @@ function DashboardAddForm() {
 
   const [imageFile, setImageFile] = useState();
 
-  const handleImageChange = (event) => {
+  /*const handleImageChange = (event) => {
     const selectedFile = event.target.files[0];
 
     if (selectedFile) {
@@ -31,7 +31,9 @@ function DashboardAddForm() {
       
       
       const reader = new FileReader();
+      console.log(reader)
       reader.onload = () => {
+        console.log('entere')
         // Convierte los datos leídos en un Blob
         const blob = new Blob([reader.result], { type: selectedFile.type });
         console.log(blob)
@@ -45,14 +47,30 @@ function DashboardAddForm() {
     }
 
 
+  };*/
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        // Convierte los datos leídos en un Blob
+        const blob = new Blob([reader.result], { type: file.type });
+        setImageFile(blob);
+      };
+
+      // Lee el archivo como una serie de bytes
+      reader.readAsArrayBuffer(file);
+    }
   };
 
-  console.log(imageFile,typeof(imageFile))
-
-  
-  console.log(dataImg)
 
   console.log(imageFile)
+
+  
+
   const [product, setProduct] = useState({
     ref: '',
     priceBuy: '',
@@ -72,7 +90,7 @@ function DashboardAddForm() {
     });
   }
 
-  console.log(product.ref, product.image)
+  console.log(product.ref)
   console.log(product)
 
   
@@ -268,6 +286,17 @@ function DashboardAddForm() {
           </Grid>
         </form>
       </Paper>
+
+      {imageFile && (
+        <div>
+          <p>Archivo cargado como Blob:</p>
+          <a href={URL.createObjectURL(imageFile)} download="archivo.png">
+            Descargar Blob
+          </a>
+          <img src={URL.createObjectURL(imageFile)} />
+           
+        </div>
+      )}
     </Container>
 
   );

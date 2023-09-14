@@ -43,7 +43,6 @@ const items = [
 
 const Navbar = () => {
   const [collapsed, setCollapsed] = useState(false);
-
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
@@ -67,16 +66,14 @@ const Navbar = () => {
         className="admin-menu"
       >
         {items.map(item => (
-          <Link to={item.path} key={item.key}>
-            <Menu.Item key={item.key}>
-              {item.label}
-            </Menu.Item>
-          </Link>
+          <Menu.Item key={item.key}>
+
+            <Link to="/adminAdd">{item.label}</Link>
+
+
+          </Menu.Item>
         ))}
       </Menu>
-      <Button type="primary" onClick={handleUpdate}>
-        Actualizar
-      </Button>
     </div>
   );
 };

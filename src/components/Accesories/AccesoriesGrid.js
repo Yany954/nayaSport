@@ -15,19 +15,30 @@ const AccesoriesGrid = () => {
   const [position, setPosition] = useState("both");
   const [align, setAlign] = useState("center");
 
-  const [orders, setOrders] = useState();
-  //console.log(JSON.stringify(orders, null, 2));
-  console.log(orders);
+  const [products, setProducts] = useState();
+  console.log(products);
+
 
   async function getData() {
-   
+
     GET_AllProducts().then((response) => {
-      setOrders(response.data);
+      setProducts(response.data);
+      console.log(response.data)
+
+      const reader = new FileReader();
+      reader.onload = () => {
+
+
+        // Lee el archivo como una serie de bytes
+        const read = reader.readAsArrayBuffer(response.data);
+        console.log(read)
+      };
+
     }).catch(function (e) {
       console.error(e);
     });
-  }  
-  
+  }
+
 
   useEffect(() => {
     getData();
@@ -49,17 +60,18 @@ const AccesoriesGrid = () => {
           xl: 3,
           xxl: 6,
         }}
-        dataSource={orders}
+        dataSource={products}
         renderItem={(item, i) => (
+
           <List.Item key={i}>
-  <Link className="accesories-cards-link" to={`${pathRoutes.uniform}/${item.idProducto}`}>
-    <RoundCard
-      imgPath={item.imagen.data}
-      product={item.nombre}
-      price={item.precio_venta}
-    />
-  </Link>
-</List.Item>
+            <Link className="accesories-cards-link" to={`${pathRoutes.uniform}/${item.idProducto}`}>
+              <RoundCard
+                imgPath={item.imagen.data}
+                product={item.nombre}
+                price={item.precio_venta}
+              />
+            </Link>
+          </List.Item>
 
         )}
       />
