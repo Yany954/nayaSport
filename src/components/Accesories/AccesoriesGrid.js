@@ -1,23 +1,19 @@
-import { List, Radio, Space } from "antd";
+import { List } from "antd";
 import { useEffect, useState } from "react";
-import RoundCard from "../Globals/RoundCard/RoundCard";
-import { pathRoutes } from "../../routes/PathRoutes";
 import { Link } from "react-router-dom";
-import "./Accesories.css";
+import { pathRoutes } from "../../routes/PathRoutes";
 import GET_AllProducts from "../../services/Products/GET_AllProducts";
+import RoundCard from "../Globals/RoundCard/RoundCard";
+import "./Accesories.css";
 
-
-
-const positionOptions = ["top", "bottom", "both"];
-const alignOptions = ["start", "center", "end"];
 
 const AccesoriesGrid = () => {
+  
   const [position, setPosition] = useState("both");
   const [align, setAlign] = useState("center");
 
   const [products, setProducts] = useState();
   console.log(products);
-
 
   async function getData() {
 
@@ -26,10 +22,8 @@ const AccesoriesGrid = () => {
       console.log(response.data)
 
       const reader = new FileReader();
+
       reader.onload = () => {
-
-
-        // Lee el archivo como una serie de bytes
         const read = reader.readAsArrayBuffer(response.data);
         console.log(read)
       };

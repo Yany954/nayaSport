@@ -5,13 +5,13 @@ import { default as React, useRef, useState } from "react";
 import Swal from "sweetalert2";
 import { base_API } from "../../../../services/configAPI";
 import Title from "../../../Globals/Title/Title";
+import './DashboardAdd.css'
 
 
 
 function DashboardAddForm() {
 
   const imageInputRef = useRef(null);
-  const dataImg = new FormData()
 
   const handleAddImageClick = () => {
     // Activa el input de imagen cuando se hace clic en "Agregar imagen"
@@ -93,9 +93,6 @@ function DashboardAddForm() {
   console.log(product.ref)
   console.log(product)
 
-  
- 
-
   const [productres, setProductres] = useState({});
   console.log(productres)
 
@@ -174,7 +171,7 @@ function DashboardAddForm() {
     <Container fullWidth>
       <Paper elevation={3} style={{ padding: "20px", borderRadius: "10px" }}>
         <Title title="Añadir producto" />
-        <form onSubmit={onSubmit}>
+        <form className="form-container" onSubmit={onSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
