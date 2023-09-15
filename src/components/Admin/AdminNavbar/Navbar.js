@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Button, Menu } from "antd";
-import { pathRoutes } from "../../../routes/PathRoutes";
-import "../Admin.css";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Button, Menu } from 'antd';
+import { pathRoutes } from '../../../routes/PathRoutes';
+import '../Admin.css';
 import {
   AppstoreOutlined,
   ContainerOutlined,
@@ -11,7 +11,7 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   PieChartOutlined,
-} from "@ant-design/icons";
+} from '@ant-design/icons';
 
 function getItem(label, key, icon, children, type, path) {
   return {
@@ -60,8 +60,8 @@ const Navbar = () => {
       </Button>
 
       <Menu
-        defaultSelectedKeys={["1"]}
-        defaultOpenKeys={["sub1"]}
+        defaultSelectedKeys={['1']}
+        defaultOpenKeys={['sub1']}
         mode="inline"
         theme="light"
         inlineCollapsed={collapsed}
