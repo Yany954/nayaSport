@@ -27,7 +27,6 @@ function getItem(label, key, icon, children, type, path) {
 const items = [
   getItem('Inventario', '1', <PieChartOutlined />, '', '', pathRoutes.adminAdd),
   getItem('Añadir', '2', <DesktopOutlined />, '', '', pathRoutes.adminAdd),
-  getItem('Editar', '3', <ContainerOutlined />, '', '', pathRoutes.adminUpdate),
   getItem('Borrar', '4', <MailOutlined />, [
     getItem('Option 5', '5'),
     getItem('Option 6', '6'),
@@ -46,33 +45,42 @@ const Navbar = () => {
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
-  
-  const handleUpdate = () => {
-    // Aquí puedes agregar tu código de backend si es necesario
-  };
+
+ 
+  function Go(path) {
+    console.log(path)
+    window.location.href= path
+  }
+
 
   return (
     <div className="admin-nav">
       <Button type="primary" onClick={toggleCollapsed}>
         {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
       </Button>
+
       <Menu
         defaultSelectedKeys={['1']}
         defaultOpenKeys={['sub1']}
         mode="inline"
         theme="light"
         inlineCollapsed={collapsed}
-        items={items}
         className="admin-menu"
+       
       >
-        {items.map(item => (
-          <Menu.Item key={item.key}>
 
-            <Link to="/adminAdd">{item.label}</Link>
+        {items.map(item => (
+          
+          <Menu.Item key={item.key}>
+           
+            <a href={item.path}  >{item.label}</a>
 
 
           </Menu.Item>
         ))}
+
+
+
       </Menu>
     </div>
   );
