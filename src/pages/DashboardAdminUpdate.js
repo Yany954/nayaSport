@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import axios from "axios"; // Importa Axios
+import DashboardUpdate from "../components/Admin/AdminDashboard/DashboardUpdate/DashboardUpdate";
 
 
 
@@ -53,6 +54,7 @@ function AdminAddForm2() {
 
   return (
     <section className="form-container">
+      <DashboardUpdate />
       <form className="form-add" onSubmit={handleSubmit}>
         <section className="formAdd-title">
           <h2>AÑADIR PRODUCTO</h2>
