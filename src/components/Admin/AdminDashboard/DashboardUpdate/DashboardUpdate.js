@@ -98,7 +98,7 @@ function DashboardUpdate() {
         "referencia": product.ref,
         "precio_int": product.priceBuy,
         "precio_venta": product.priceSale,
-        "imagen": product.imagen,
+        "imagen":  product.imagen,
         "dimensiones": product.size,
         "nombre": product.productName,
         "descripcion": product.description,

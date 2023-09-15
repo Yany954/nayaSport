@@ -7,6 +7,8 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import Title from '../../../Globals/Title/Title';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { pathRoutes } from '../../../../routes/PathRoutes';
+import { Link } from 'react-router-dom';
 
 function DashboardDeleteForm() {
 
@@ -114,7 +116,7 @@ function DashboardDeleteForm() {
           renderItem={(item, i) => (
 
             <List.Item className='list-item' key={i}
-              actions={[<button onClick={(e) => onDelete(item.idProducto)} >Borrar</button>, <a key="list-loadmore-edit">edit</a>, <a key="list-loadmore-more">more</a>]}
+              actions={[<button onClick={(e) => onDelete(item.idProducto)} >Borrar</button>, <Link to={`${pathRoutes.adminUpdate}/${item.idProducto}`} key="list-loadmore-edit">edit</Link>, <a key="list-loadmore-more">more</a>]}
             >
               <Skeleton avatar title={false} loading={false} active>
                 <List.Item.Meta
