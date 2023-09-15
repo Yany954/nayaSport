@@ -31,7 +31,7 @@ function WebRoutes() {
         <Route path={pathRoutes.uniform} Component={Uniform}></Route>
         <Route path={pathRoutes.adminAdd} Component={DashboardAdminAdd}></Route>
         <Route path={pathRoutes.adminDelete} Component={DashboardAdminDelete}></Route>
-        <Route path={pathRoutes.adminUpdate} Component={DashboardAdminUpdate}></Route>
+        <Route path={`${pathRoutes.adminUpdate}/:id`} Component={DashboardAdminUpdate}></Route>
 
       </Routes>
     </BrowserRouter>

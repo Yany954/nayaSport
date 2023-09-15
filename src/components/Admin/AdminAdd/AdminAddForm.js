@@ -5,16 +5,13 @@ import { default as React, useRef, useState } from "react";
 import Swal from "sweetalert2";
 import { base_API } from "../../../services/configAPI";
 import Title from "../../Globals/Title/Title";
+import './AdminAddForm.css';
 
 function AdminAddForm() {
 
-  
-
   const imageInputRef = useRef(null);
-  const dataImg = new FormData()
-
+  
   const handleAddImageClick = () => {
-    // Activa el input de imagen cuando se hace clic en "Agregar imagen"
     imageInputRef.current.click();
   };
 
@@ -24,27 +21,20 @@ function AdminAddForm() {
     const selectedFile = event.target.files[0];
 
     if (selectedFile) {
-      // Muestra el nombre del archivo seleccionado
-      // Puedes personalizar cómo mostrarlo (por ejemplo, en un div o un span)
-      console.log("Archivo seleccionado:", selectedFile);
-      dataImg.append('imagen', selectedFile);
       
+      console.log("Archivo seleccionado:", selectedFile);
       
       const reader = new FileReader();
       reader.onload = () => {
-        // Convierte los datos leídos en un Blob
         const blob = new Blob([reader.result], { type: file.type });
         console.log(blob)
         setImageFile(blob);
 
-        // Lee el archivo como una serie de bytes
         const read = reader.readAsArrayBuffer(file);
         console.log(read)
       };
 
     }
-
-
   };
 
   console.log(imageFile,typeof(imageFile))
@@ -70,8 +60,6 @@ function AdminAddForm() {
 
   console.log(product.ref, product.image)
   console.log(product)
-
-
 
 
   const [productres, setProductres] = useState({});
@@ -114,7 +102,7 @@ function AdminAddForm() {
         Swal.fire({
           icon: 'success',
           title: 'Producto añadido',
-          text: 'Porducto añadido con exito',
+          text: 'Producto añadido con exito',
         })
         setProduct({
           ref: '',
@@ -142,7 +130,7 @@ function AdminAddForm() {
   }
 
   return (
-    <Container maxWidth="sm">
+    <Container fullWidth >
        {blob && (
         <div>
           <p>Archivo cargado como Blob:</p>
@@ -151,9 +139,9 @@ function AdminAddForm() {
           </a>
         </div>
       )}
-      <Paper elevation={3} style={{ padding: "20px", borderRadius: "10px" }}>
+     
         <Title title="Añadir producto" />
-        <form onSubmit={onSubmit}>
+        <form className="form-container" onSubmit={onSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
@@ -167,7 +155,7 @@ function AdminAddForm() {
               />
             </Grid>
             <Grid item xs={6}>
-
+            <FormControl fullWidth>
               <InputLabel>Categoria</InputLabel>
               <Select
                 required
@@ -178,7 +166,7 @@ function AdminAddForm() {
                 <MenuItem value="1">Accesorios deportivos</MenuItem>
                 <MenuItem value="2">Ropa deportiva</MenuItem>
               </Select>
-
+              </FormControl>
             </Grid>
             <Grid item xs={6}>
               <TextField
@@ -271,7 +259,7 @@ function AdminAddForm() {
             </Grid>
           </Grid>
         </form>
-      </Paper>
+     
     </Container>
 
   );

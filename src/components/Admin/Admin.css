@@ -16,8 +16,13 @@
 
 .list-container{
     width: 100%;
+    overflow: auto;
 }
 
 .list-item{
     display: flex;
+}
+
+.img-form{
+    width: 50%;
 }
