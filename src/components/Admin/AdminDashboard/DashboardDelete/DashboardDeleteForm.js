@@ -110,7 +110,7 @@ function DashboardDeleteForm() {
         endMessage={<Divider plain>No hay más productos 🤐</Divider>}
         scrollableTarget="scrollableDiv"
       >
-        <Title title='PRODUCTOS' />
+        <Title title='PRODUCTOS DISPONIBLES' />
         <List
           dataSource={products}
           renderItem={(item, i) => (
