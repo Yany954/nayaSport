@@ -5,6 +5,7 @@ import AdminLayout from '../components/Admin/AdminLayout/AdminLayout'
 function DashboardAdminDelete() {
   return (
     <div className='container-background'>
+      
 
       <AdminLayout component={<DashboardDeleteForm/>} />
 

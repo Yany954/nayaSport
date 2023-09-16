@@ -1,0 +1,34 @@
+.form-container-update {
+    width: 70%; 
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    padding: 3%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .img-form{
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+  .info-label {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  /* Estilos para los valores */
+  .info-value {
+    font-weight: normal;
+  }
+  
+  /* Estilos para cada conjunto de nombre y valor */
+  .info-item {
+    margin-bottom: 10px;
+    text-align: center;
+  }

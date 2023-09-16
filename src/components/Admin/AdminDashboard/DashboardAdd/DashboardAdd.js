@@ -184,7 +184,7 @@ function DashboardAddForm() {
                 value={product.ref}
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={6}><FormControl fullWidth>
 
               <InputLabel>Categoria</InputLabel>
               <Select
@@ -196,7 +196,7 @@ function DashboardAddForm() {
                 <MenuItem value="1">Accesorios deportivos</MenuItem>
                 <MenuItem value="2">Ropa deportiva</MenuItem>
               </Select>
-
+              </FormControl>
             </Grid>
             <Grid item xs={6}>
               <TextField
