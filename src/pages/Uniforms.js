@@ -16,11 +16,13 @@ function Uniforms() {
       <Header />
       <Search />
       <Title  title='UNIFORMES' />
-      <Filter />
+      {/* <Filter /> */}
       <AccesoriesGrid />
-      <SquareCard />
+      
+      {/* <SquareCard />
       <Title  title='También te puede interesar' />
-      <Slider />
+      <Slider /> */}
+      <br></br>
       <Footer />
       <WhatsApp />
     </div>

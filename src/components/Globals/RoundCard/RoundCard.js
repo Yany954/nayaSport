@@ -25,7 +25,7 @@ function RoundCard({ imgPath, product, price }) {
       </aside>
       <aside className="round-card-">
         <h2 className="round-card-description">{product}</h2>
-        <h3 className="round-card-price">{price}</h3>
+        <h3 className="round-card-price">$ {price}</h3>
       </aside>
     </article>
   );
