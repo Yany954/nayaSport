@@ -1,218 +1,218 @@
-import React, { useEffect, useRef, useState } from 'react'
-import GET_AllProducts from '../../../../services/Products/GET_AllProducts';
-import { useParams } from 'react-router';
-import GET_ProductById from '../../../../services/Products/GET_ProductById';
-import '../../../Admin/Admin.css'
-import { CloudUpload, Title } from '@mui/icons-material';
-import { Button, FormControl, Grid, InputLabel, MenuItem, Paper, Select, TextField } from '@mui/material';
-import { Container } from '@mui/system';
-import { base_API } from '../../../../services/configAPI';
-import Swal from 'sweetalert2';
-import axios from 'axios';
+import React, { useEffect, useRef, useState } from "react";
+import "./DashboardUpdate.css";
+import GET_AllProducts from "../../../../services/Products/GET_AllProducts";
+import { useParams } from "react-router";
+import GET_ProductById from "../../../../services/Products/GET_ProductById";
+import "../../../Admin/Admin.css";
+import { CloudUpload } from "@mui/icons-material";
+import {
+  Button,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Paper,
+  Select,
+  TextField,
+} from "@mui/material";
+import { Container } from "@mui/system";
+import { base_API } from "../../../../services/configAPI";
+import Swal from "sweetalert2";
+import axios from "axios";
+import Title from "../../../Globals/Title/Title";
 
 function DashboardUpdate() {
+  const imageInputRef = useRef(null);
 
-    const imageInputRef = useRef(null);
+  const handleAddImageClick = () => {
+    imageInputRef.current.click();
+  };
 
-    const handleAddImageClick = () => {
-        imageInputRef.current.click();
-    };
+  const { id } = useParams();
 
-    const { id } = useParams();
-    console.log(id)
+  const [imageUrl, setImageUrl] = useState("");
+  const [imageFile, setImageFile] = useState();
+  const [product, setProduct] = useState({
+    ref: "",
+    priceBuy: "",
+    priceSale: "",
+    size: "",
+    productName: "",
+    description: "",
+    brand: "",
+    category: "",
+  });
 
-    const [imageUrl, setImageUrl] = useState('');
-    const [imageFile, setImageFile] = useState();
-    const [product, setProduct] = useState({
-        ref: '',
-        priceBuy: '',
-        priceSale: '',
-        size: '',
-        productName: '',
-        description: '',
-        brand: '',
-        category: ''
-    })
+  const [productUpdate, setProductUpdate] = useState({
+    ref: "",
+    priceBuy: "",
+    priceSale: "",
+    size: "",
+    productName: "",
+    description: "",
+    brand: "",
+    category: "",
+  });
 
-    const [productUpdate, setProductUpdate] = useState({
-        ref: '',
-        priceBuy: '',
-        priceSale: '',
-        size: '',
-        productName: '',
-        description: '',
-        brand: '',
-        category: ''
+  function HandleChange(e) {
+    setProduct({
+      ...product,
+      [e.target.name]: e.target.value,
     });
-    console.log(product)
+  }
 
-
-    function HandleChange(e) {
-        setProduct({
-            ...product,
-            [e.target.name]: e.target.value,
-
+  const request_API = async () => {
+    GET_ProductById({ id })
+      .then(function (response) {
+        const blob = new Blob([new Uint8Array(response.data.imagen.data)], {
+          type: "image/png",
         });
+        const url = URL.createObjectURL(blob);
 
+        setImageUrl(url);
+        setProduct(response.data);
+        setProductUpdate(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+        setProduct(error);
+      });
+  };
+
+  useEffect(() => {
+    request_API();
+  }, []);
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        const blob = new Blob([reader.result], { type: file.type });
+        setImageFile(blob);
+      };
+
+      reader.readAsArrayBuffer(file);
     }
+  };
 
-    const request_API = async () => {
-        GET_ProductById({ id }).then(function (response) {
-            console.log(response.data);
-            const blob = new Blob([new Uint8Array(response.data.imagen.data)], { type: 'image/png' });
-            const url = URL.createObjectURL(blob);
+  const data = {
+    referencia: product.ref,
+    precio_int: product.priceBuy,
+    precio_venta: product.priceSale,
+    imagen: product.imagen,
+    dimensiones: product.size,
+    nombre: product.productName,
+    descripcion: product.description,
+    marca: product.brand,
+    Categoria_idCategoria: product.category,
+  };
 
+  function onSubmit(e) {
+    e.preventDefault();
 
-            setImageUrl(url);
-            setProduct(response.data)
-            setProductUpdate(response.data)
-        }).catch(function (error) {
-            console.error(error);
-            setProduct(error)
-        });
-    }
+    const request_API_UPDATE = async () => {
+      const request_URL = `${base_API.api}/productos/${id}`;
 
+      const options = {
+        method: "PUT",
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      };
 
-    useEffect(() => {
-        request_API();
-    }, [])
-
-
-    const handleImageChange = (event) => {
-        const file = event.target.files[0];
-
-        if (file) {
-            const reader = new FileReader();
-
-            reader.onload = () => {
-                const blob = new Blob([reader.result], { type: file.type });
-                setImageFile(blob);
-            };
-
-            reader.readAsArrayBuffer(file);
-        }
+      return axios.put(request_URL, data, options);
     };
-    console.log(imageFile)
 
-    const data = {
-        "referencia": product.ref,
-        "precio_int": product.priceBuy,
-        "precio_venta": product.priceSale,
-        "imagen":  product.imagen,
-        "dimensiones": product.size,
-        "nombre": product.productName,
-        "descripcion": product.description,
-        "marca": product.brand,
-        "Categoria_idCategoria": product.category
-    }
-    console.log(data)
+    request_API_UPDATE()
+      .then(function (response) {
+        if (response.status == 200 || response.status == 201) {
+          Swal.fire({
+            icon: "success",
+            title: "Producto actualizado",
+            text: "Producto actualizado con éxito",
+          });
 
-    function onSubmit(e) {
-        e.preventDefault();
-
-        console.log(data)
-
-        const request_API_UPDATE = async () => {
-            
-            const request_URL = `${base_API.api}/productos/${id}`;
-
-            const options = {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
-            };
-
-            return axios.put(request_URL, data, options)
+          setTimeout(() => {
+            window.location.reload(true);
+          }, 5000);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "No se ha podido actualizar el producto",
+          });
         }
+      })
+      .catch(function (error) {
+        console.error(error);
 
-        request_API_UPDATE().then(function (response) {
-            console.log(response.data);
-
-
-            if (response.status == 200 || response.status == 201) {
-
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Producto actualizado',
-                    text: 'Producto actualizado con exito',
-                })
-                
-                setTimeout(() => {
-                    window.location.reload(true);
-                }, 5000);
-                setProduct({
-                    ref: '',
-                    priceBuy: '',
-                    priceSale: '',
-                    image: '',
-                    size: '',
-                    productName: '',
-                    description: '',
-                    brand: '',
-                    category: ''
-                })
-
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'No se ha podido actualizar el producto',
-                })
-            }
-        }).catch(function (error) {
-            console.error(error);
-
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'No se ha podido añadir el producto',
-            })
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "No se ha podido actualizar el producto",
         });
+      });
+  }
 
-    }
-
-    return (
-        <div>
-            <section>
-                <p>{product.referencia}</p>
-                <p>{product.nombre}</p>
-                <p>{product.precio_int}</p>
-                <p>{product.precio_venta}</p>
-                <p>{product.dimensiones}</p>
-                <p>{product.marca}</p>
-                {imageUrl && <img className='img-form' src={imageUrl} alt="img" />}
-            </section>
-            <section>
-                <Container fullWidth>
-                <Paper elevation={3} style={{ padding: "20px", borderRadius: "10px" }}>
-        <Title title="Añadir producto" />
-        <form className="form-container" onSubmit={onSubmit}>
+  return (
+    <Container fullWidth>
+      <Paper elevation={3} style={{ padding: "20px", borderRadius: "10px" }}>
+        <Title title="Actualizar producto" />
+        <form className="form-container-update" onSubmit={onSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
+              <section className="centered-info">
+                <div className="info-item">
+                  <span className="info-label">Referencia:</span>
+                  <span className="info-value">{product.referencia}</span>
+                </div>
+                <div className="info-item">
+                  <span className="info-label">Nombre:</span>
+                  <span className="info-value">{product.nombre}</span>
+                </div>
+                <div className="info-item">
+                  <span className="info-label">Precio de compra:</span>
+                  <span className="info-value">{product.precio_int}</span>
+                </div>
+                <div className="info-item">
+                  <span className="info-label">Precio de venta:</span>
+                  <span className="info-value">{product.precio_venta}</span>
+                </div>
+                <div className="info-item">
+                  <span className="info-label">Dimensiones:</span>
+                  <span className="info-value">{product.dimensiones}</span>
+                </div>
+                <div className="info-item">
+                  <span className="info-label">Marca:</span>
+                  <span className="info-value">{product.marca}</span>
+                </div>
+                {imageUrl && (
+                  <img className="img-form" src={imageUrl} alt="img" />
+                )}
+              </section>
+
               <TextField
                 required
                 fullWidth
                 label="Referencia"
-                placeholder="Referencia"
+                placeholder={product.referencia}
                 name="ref"
                 onChange={HandleChange}
                 value={product.ref}
               />
             </Grid>
             <Grid item xs={6}>
-
-              <InputLabel>Categoria</InputLabel>
-              <Select
-                required
-                name="category"
-                onChange={HandleChange}
-              >
-                <MenuItem disabled>Categoria</MenuItem>
-                <MenuItem value="1">Accesorios deportivos</MenuItem>
-                <MenuItem value="2">Ropa deportiva</MenuItem>
-              </Select>
-
+              <FormControl fullWidth>
+                <InputLabel>Categoría</InputLabel>
+                <Select required name="category" onChange={HandleChange}>
+                  <MenuItem disabled>Categoría</MenuItem>
+                  <MenuItem value="1">Accesorios deportivos</MenuItem>
+                  <MenuItem value="2">Ropa deportiva</MenuItem>
+                </Select>
+              </FormControl>
             </Grid>
             <Grid item xs={6}>
               <TextField
@@ -247,12 +247,8 @@ function DashboardUpdate() {
             <Grid item xs={6}>
               <FormControl fullWidth>
                 <InputLabel>Marca</InputLabel>
-                <Select
-                  name="brand"
-                  onChange={HandleChange}
-                  required
-                >
-                  <MenuItem disabled >Marca</MenuItem>
+                <Select name="brand" onChange={HandleChange} required>
+                  <MenuItem disabled>Marca</MenuItem>
                   <MenuItem value="Kamila">Kamila</MenuItem>
                   <MenuItem value="Molten">Molten</MenuItem>
                 </Select>
@@ -288,7 +284,6 @@ function DashboardUpdate() {
                 accept=".png"
                 style={{ display: "none" }}
                 onChange={handleImageChange}
-
               />
               <Button
                 variant="contained"
@@ -301,27 +296,23 @@ function DashboardUpdate() {
             </Grid>
             <Grid item xs={12}>
               <button variant="contained" color="primary">
-                GUARDAR
+                ACTUALIZAR
               </button>
             </Grid>
           </Grid>
         </form>
       </Paper>
-
-                    {imageFile && (
-                        <div>
-                            <p>Archivo cargado como Blob:</p>
-                            <a href={URL.createObjectURL(imageFile)} download="archivo.png">
-                                Descargar Blob
-                            </a>
-                            <img src={URL.createObjectURL(imageFile)} />
-
-                        </div>
-                    )}
-                </Container>
-            </section>
+      {imageFile && (
+        <div>
+          <p>Archivo cargado como Blob:</p>
+          <a href={URL.createObjectURL(imageFile)} download="archivo.png">
+            Descargar Blob
+          </a>
+          <img src={URL.createObjectURL(imageFile)} />
         </div>
-    )
+      )}
+    </Container>
+  );
 }
 
-export default DashboardUpdate
+export default DashboardUpdate;

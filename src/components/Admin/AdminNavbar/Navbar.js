@@ -25,7 +25,7 @@ function getItem(label, key, icon, children, type, path) {
 }
 
 const items = [
-  getItem('Inventario', '1', <PieChartOutlined />, '', '', pathRoutes.adminAdd),
+  getItem('Inventario', '1', <PieChartOutlined />, '', '', pathRoutes.adminDelete),
   getItem('Añadir', '2', <DesktopOutlined />, '', '', pathRoutes.adminAdd),
   getItem('Borrar', '4', <MailOutlined />, [
     getItem('Option 5', '5'),
