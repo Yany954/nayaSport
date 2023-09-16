@@ -126,12 +126,12 @@ function DashboardDeleteForm() {
         scrollableTarget="scrollableDiv"
       >
         <Title title='PRODUCTOS DISPONIBLES' />
-        <List
+        <List style={{ padding: '30px' }}
           dataSource={products}
           renderItem={(item, i) => (
 
             <List.Item className='list-item' key={i}
-              actions={[<button onClick={(e) => onDelete(item.idProducto)} >Borrar</button>, <Link to={`${pathRoutes.adminUpdate}/${item.idProducto}`} key="list-loadmore-edit">edit</Link>, <a key="list-loadmore-more">more</a>]}
+              actions={[<button onClick={(e) => onDelete(item.idProducto)} >Delete</button>, <Link to={`${pathRoutes.adminUpdate}/${item.idProducto}`} key="list-loadmore-edit">Update</Link>]}
             >
               <Skeleton avatar title={false} loading={false} active>
                 <List.Item.Meta

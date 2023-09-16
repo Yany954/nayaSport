@@ -25,15 +25,15 @@ function getItem(label, key, icon, children, type, path) {
 }
 
 const items = [
-  getItem('Inventario', '1', <PieChartOutlined />, '', '', pathRoutes.adminDelete),
-  getItem('Añadir', '2', <DesktopOutlined />, '', '', pathRoutes.adminAdd),
-  getItem('Borrar', '4', <MailOutlined />, [
+  getItem('INVENTARIO', '1', <PieChartOutlined />, '', '', pathRoutes.adminDelete),
+  getItem('AÑADIR', '2', <DesktopOutlined />, '', '', pathRoutes.adminAdd),
+  getItem('BORRAR', '4', <MailOutlined />, [
     getItem('Option 5', '5'),
     getItem('Option 6', '6'),
     getItem('Option 7', '7'),
     getItem('Option 8', '8'),
   ], '', pathRoutes.adminDelete),
-  getItem('Perfil', 'sub2', <AppstoreOutlined />, [
+  getItem('PERFIL', 'sub2', <AppstoreOutlined />, [
     getItem('Option 9', '9'),
     getItem('Option 10', '10'),
     getItem('Submenu', 'sub3', null, [getItem('Option 11', '11'), getItem('Option 12', '12')]),
