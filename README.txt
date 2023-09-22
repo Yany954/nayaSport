@@ -22,7 +22,7 @@ La tienda en línea utiliza las siguientes tecnologías:
 
 ### Arquitectura y Base de Datos
 
-La arquitectura del sistema se basa en microservicios para un mejor manejo de las funcionalidades. Se implementa una arquitectura de capas para separar la lógica y los componentes. La base de datos está diseñada en base a un modelo entidad-relación y se utiliza SQL para gestionar los datos.
+La arquitectura basada en capas para un mejor manejo de las funcionalidades. Se implementa una arquitectura de capas para separar la lógica y los componentes. La base de datos está diseñada en base a un modelo entidad-relación y se utiliza SQL para gestionar los datos.
 
 ### Roles de Usuario
 
