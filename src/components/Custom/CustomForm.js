@@ -1,8 +1,7 @@
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import React from "react";
-import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import Title from "../Globals/Title/Title";
-import './custom.css'
+import './custom.css';
 
 const formSchema = Yup.object().shape({
   email: Yup.string()

@@ -1,9 +1,9 @@
 import React from 'react'
 import CustomForm from '../components/Custom/CustomForm'
-import Title from '../components/Globals/Title/Title'
-import Header from '../components/Globals/Header/Header'
-import WhatsApp from '../components/Globals/WhatsApp/WhatsApp'
 import Footer from '../components/Globals/Footer/Footer'
+import Header from '../components/Globals/Header/Header'
+import Title from '../components/Globals/Title/Title'
+import WhatsApp from '../components/Globals/WhatsApp/WhatsApp'
 
 function Custom() {
   return (

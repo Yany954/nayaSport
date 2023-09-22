@@ -1,7 +1,7 @@
 import { AudioOutlined } from '@ant-design/icons';
 import { Input, Space } from 'antd';
-import './Search.css';
 import { useState } from 'react';
+import './Search.css';
 const { Search } = Input;
 
 const suffix = (
@@ -13,7 +13,6 @@ const suffix = (
         }}
     />
 );
-
 
 function SearchBox() {
 

@@ -1,9 +1,9 @@
 import React from 'react'
-import Header from '../components/Globals/Header/Header'
-import Footer from '../components/Globals/Footer/Footer'
-import WhatsApp from '../components/Globals/WhatsApp/WhatsApp'
 import AccordionFAQS from '../components/Customers/AccordionFAQS'
+import Footer from '../components/Globals/Footer/Footer'
+import Header from '../components/Globals/Header/Header'
 import Title from '../components/Globals/Title/Title'
+import WhatsApp from '../components/Globals/WhatsApp/WhatsApp'
 
 
 function Customers() {

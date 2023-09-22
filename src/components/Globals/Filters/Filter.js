@@ -1,6 +1,6 @@
-import React from 'react';
 import { Checkbox } from 'antd';
-import "./Filter.css"
+import React from 'react';
+import "./Filter.css";
 const onChange = (checkedValues) => {
   console.log('checked = ', checkedValues);
 };

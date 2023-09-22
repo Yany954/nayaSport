@@ -1,13 +1,18 @@
+import axios from 'axios';
 import React, { useState } from 'react';
-import axios from 'axios'; 
+import { useNavigate } from 'react-router-dom';
 import '../Login.css';
+
+
 
 export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-
+  const navigate = useNavigate();
+  console.log(navigate)
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -16,7 +21,7 @@ export default function Login() {
 
       console.log(response.status)
       if (response.status == 200) {
-        window.location.href = '/admin';
+        navigate('/admin');
       } else {
         setError('Credenciales incorrectas');
       }
@@ -28,7 +33,7 @@ export default function Login() {
 
   return (
     <div className='login-container'>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} >
         <div className='input-container'>
           <label htmlFor="username">Usuario</label>
           <input

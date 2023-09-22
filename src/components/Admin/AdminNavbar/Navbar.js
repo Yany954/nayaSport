@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button, Menu } from 'antd';
 import { pathRoutes } from '../../../routes/PathRoutes';
 import '../Admin.css';
@@ -41,6 +41,9 @@ const items = [
 ];
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  console.log(navigate)
+  
   const [collapsed, setCollapsed] = useState(false);
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
@@ -49,7 +52,7 @@ const Navbar = () => {
  
   function Go(path) {
     console.log(path)
-    window.location.href= path
+    navigate(path);
   }
 
 
@@ -71,10 +74,9 @@ const Navbar = () => {
 
         {items.map(item => (
           
-          <Menu.Item key={item.key}>
+          <Menu.Item onClick={(e) => Go(item.path)} key={item.key}>
            
-            <a href={item.path}  >{item.label}</a>
-
+            <a href={item.path}   >{item.label}</a>
 
           </Menu.Item>
         ))}

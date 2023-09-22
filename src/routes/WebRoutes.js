@@ -1,18 +1,18 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { pathRoutes } from "./PathRoutes";
-import Home from "../pages/Home";
-import Uniforms from "../pages/Uniforms";
-import Customers from "../pages/Customers";
-import Contact from "../pages/Contact";
 import Accesories from "../pages/Accesories";
-import Uniform from "../pages/Uniform";
-import PrivacyPolicies from "../pages/PrivacyPolicies";
+import Contact from "../pages/Contact";
 import Custom from "../pages/Custom";
-import Login from "../pages/Login";
+import Customers from "../pages/Customers";
 import DashboardAdmin from "../pages/DashboardAdmin";
 import DashboardAdminAdd from "../pages/DashboardAdminAdd";
 import DashboardAdminDelete from "../pages/DashboardAdminDelete";
 import DashboardAdminUpdate from "../pages/DashboardAdminUpdate";
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import PrivacyPolicies from "../pages/PrivacyPolicies";
+import Uniform from "../pages/Uniform";
+import Uniforms from "../pages/Uniforms";
+import { pathRoutes } from "./PathRoutes";
 
 function WebRoutes() {
   return (

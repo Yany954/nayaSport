@@ -1,9 +1,8 @@
-import React from 'react'
-import './Home.css'
-import Button from "../Globals/Button/Button";
+import React from 'react';
 import { pathRoutes } from '../../routes/PathRoutes';
-import RoundCard from '../Globals/RoundCard/RoundCard';
+import Button from "../Globals/Button/Button";
 import SliderHome from '../Globals/Slider/SliderHome';
+import './Home.css';
 
 function Section1() {
     return (

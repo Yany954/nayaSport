@@ -1,10 +1,5 @@
-import {
-    AppstoreOutlined,
-    DesktopOutlined
-} from '@ant-design/icons';
 import { Menu } from 'antd';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { SubMenuAccesories, SubMenuAccesoriesSection } from '../../../Models/SubMenu';
 function getItem(label, key, icon, children, type) {
     return {

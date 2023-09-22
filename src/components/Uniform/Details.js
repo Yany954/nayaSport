@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom';
+import Uniforme from "../../assets/img/UniformeEAN.svg";
+import GET_ProductById from "../../services/Products/GET_ProductById";
 import Title from "../Globals/Title/Title";
 import "./Uniform.css";
-import Uniforme from "../../assets/img/UniformeEAN.svg";
-import { useParams } from 'react-router-dom';
-import GET_ProductById from "../../services/Products/GET_ProductById";
 
 
 function Details() {

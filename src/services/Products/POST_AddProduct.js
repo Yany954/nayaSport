@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { base_API } from '../configAPI';
 
 function POST_AddProduct({referencia,precio_int,precio_venta,imagen,dimensiones,nombre,descripcion,marca,Categoria_idCategoria}) {

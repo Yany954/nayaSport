@@ -1,4 +1,5 @@
 import MenuIcon from "@mui/icons-material/Menu";
+import { ThemeProvider, createTheme } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -13,7 +14,6 @@ import { Link } from "react-router-dom";
 import Logo from "../../../assets/img/logo.svg";
 import { pages, pathRoutes } from "../../../routes/PathRoutes";
 import "./Header.css";
-import { ThemeProvider, createTheme } from "@mui/material";
 
 
 function Header() {
