@@ -1,9 +1,9 @@
-import React from 'react';
-import Logo from '../../../assets/img/logo.svg';
-import './Footer.css';
-import { Link } from 'react-router-dom';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Logo from '../../../assets/img/logo.svg';
 import { pathRoutes } from '../../../routes/PathRoutes';
+import './Footer.css';
 
 function Footer() {
     return (

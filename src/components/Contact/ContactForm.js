@@ -1,10 +1,10 @@
-import React from 'react'
-import './Contact.css'
-import { Socialmedia } from '../../Models/SocialMedia'
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import React from 'react';
+import { Socialmedia } from '../../Models/SocialMedia';
 import Title from '../Globals/Title/Title';
+import './Contact.css';
 
 function ContactForm() {
     return (

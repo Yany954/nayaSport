@@ -1,9 +1,9 @@
-import React from 'react'
-import './Login.css'
 import HomeIcon from '@mui/icons-material/Home';
-import { pathRoutes } from '../../routes/PathRoutes';
-import { Link } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { pathRoutes } from '../../routes/PathRoutes';
+import './Login.css';
 
 function LoginForm() {
 

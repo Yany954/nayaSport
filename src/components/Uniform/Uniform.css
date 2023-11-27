@@ -56,11 +56,10 @@
   }
   
   .size-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 15px;
-
-    /* Agrega estilos para las cards de tallas */
+    display: flex;
+    flex-wrap: wrap; /* Para que las size cards se envuelvan si no caben en una sola fila */
+    justify-content: center; /* Centra horizontalmente los elementos dentro del contenedor */
+    gap: 10px;
   }
   .card {
     display: flex;

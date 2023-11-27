@@ -1,7 +1,7 @@
-import React from 'react'
-import './WhatsApp.css';
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import { apiWhatsApp  } from '../../../routes/PathRoutes';
+import React from 'react';
+import { apiWhatsApp } from '../../../routes/PathRoutes';
+import './WhatsApp.css';
 
 function WhatsApp() {
   return (

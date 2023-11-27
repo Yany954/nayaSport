@@ -71,13 +71,28 @@ function DashboardDeleteForm() {
       if (response.status == 200) {
 
         Swal.fire({
-          icon: 'success',
-          title: 'Producto Eliminado',
-          text: 'Producto eliminado con exito',
+          icon: 'question',
+          title: 'Eliminar producto',
+          text: '¿Seguro desea eliminar este producto?',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Si,borrar'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Producto Eliminado',
+              text: 'Producto eliminado con exito',
+            })
+
+            setTimeout(() => {
+              window.location.reload(true);
+            }, 3000);
+          }
         })
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 3000);
+
+
 
       } else {
         Swal.fire({
@@ -110,13 +125,13 @@ function DashboardDeleteForm() {
         endMessage={<Divider plain>No hay más productos 🤐</Divider>}
         scrollableTarget="scrollableDiv"
       >
-        <Title title='Borrar Producto' />
-        <List
+        <Title title='PRODUCTOS DISPONIBLES' />
+        <List style={{ padding: '30px' }}
           dataSource={products}
           renderItem={(item, i) => (
 
             <List.Item className='list-item' key={i}
-              actions={[<button onClick={(e) => onDelete(item.idProducto)} >Borrar</button>, <Link to={`${pathRoutes.adminUpdate}/${item.idProducto}`} key="list-loadmore-edit">edit</Link>, <a key="list-loadmore-more">more</a>]}
+              actions={[<button onClick={(e) => onDelete(item.idProducto)} >Delete</button>, <Link to={`${pathRoutes.adminUpdate}/${item.idProducto}`} key="list-loadmore-edit">Update</Link>]}
             >
               <Skeleton avatar title={false} loading={false} active>
                 <List.Item.Meta

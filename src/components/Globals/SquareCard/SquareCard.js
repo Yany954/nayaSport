@@ -12,8 +12,6 @@ function SquareCard() {
                 <button className='square-card-btn'>+</button>
             </section>
         </div>
-
-
     )
 }
 

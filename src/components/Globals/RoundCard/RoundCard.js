@@ -6,15 +6,12 @@ function RoundCard({ imgPath, product, price }) {
   console.log(imageUrl);
 
   useEffect(() => {
-    // Supongamos que 'imgPath' es un arreglo de bytes que representan una imagen PNG
     const blob = new Blob([new Uint8Array(imgPath)], { type: 'image/png' });
 
-    // Crear una URL para el Blob
     const url = URL.createObjectURL(blob);
 
     setImageUrl(url);
 
-    // Limpia la URL del objeto cuando el componente se desmonta para evitar fugas de memoria
     return () => URL.revokeObjectURL(url);
   }, [imgPath]);
   console.log(imgPath);
@@ -25,7 +22,7 @@ function RoundCard({ imgPath, product, price }) {
       </aside>
       <aside className="round-card-">
         <h2 className="round-card-description">{product}</h2>
-        <h3 className="round-card-price">{price}</h3>
+        <h3 className="round-card-price">$ {price}</h3>
       </aside>
     </article>
   );
