@@ -13,7 +13,7 @@ footer{
 }
 
 .footer-top-menu{
-    display: flex; 
+    display: flex;
 }
 
 .footer-top-menu ul{
@@ -24,7 +24,12 @@ footer{
 .list-title{
     list-style: none;
     font-weight: 800;
-    margin-bottom: 4px;
+    margin-bottom: 3vh;
+}
+.list-item{
+    list-style: none;
+    font-weight: 250;
+    margin-bottom: 2vh;
 }
 
 .footer-bottom{
@@ -34,15 +39,50 @@ footer{
 }
 
 .footer-bottom-name{
-    color: aqua;
-    font-weight: 900;
+    color: var(--secondary-color-text);
+    font-weight: 250;
 }
 
 .footer-bottom-link{
     color: white;
     text-decoration: none;
-    font-weight: 800;
+    font-weight: 250;
 }
+.footer-button {
+    background: white;
+    font-family:  'Source Code Pro', monospace;
+    color: var(--secondary-color-text);
+    padding: 0.2em 1.3em;
+    font-weight: 900;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 0.3em;
+    box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.2);
+  }
+  
+  .footer-button:hover {
+    transform: translate(0.05em, -0.05em); 
+    box-shadow: 0.15em 0.15em 0.3em rgba(0, 0, 0, 0.4); 
+    background: var(--secondary-color-text);
+    color: white; 
+
+  }
+  
+  .footer-button:active {
+    transform: translate(-0.05em, 0.05em); 
+    box-shadow: 0.05em 0.05em 0.3em rgba(0, 0, 0, 0.3); 
+  }
+  .separador {
+    height: 0.5vh;
+    background-color: var(--secondary-color-text);
+  
+}
+  .footer-siguenos{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
 
 
 @media screen and (width >= 770px ) {
