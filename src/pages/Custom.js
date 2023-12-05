@@ -9,12 +9,15 @@ function Custom() {
   return (
     <div className='background-custom'>
       <Header />
+      
+    
+
+      <CustomForm />
       <Title
         color="white"
         title="!Lleva tu estilo a otro nivel!
         destacando entre la multitud en la cancha."
       />
-      <CustomForm />
       <Footer />
       <WhatsApp />
     </div>
