@@ -6,6 +6,7 @@ import Footer from '../components/Globals/Footer/Footer';
 import WhatsApp from '../components/Globals/WhatsApp/WhatsApp';
 import SquareCard from '../components/Globals/SquareCard/SquareCard';
 import Slider from '../components/Uniforms/Slider';
+import HomeSlider from '../components/Uniforms/homeSlider';
 
 
 function Uniforms() {
@@ -13,6 +14,7 @@ function Uniforms() {
     <div className='container-background'>
       <Header />
       <Title  title='UNIFORMES' />
+      <HomeSlider />
       <RoundCard />
       <SquareCard />
       <Title  title='También te puede interesar' />

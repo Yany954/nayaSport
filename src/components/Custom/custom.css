@@ -1,3 +1,8 @@
+
+.form-section{
+    display: flex;
+    flex-direction: column;
+}
 .container-customform{
     padding-left: 2%;
     padding-right: 2%;
@@ -8,8 +13,6 @@
     flex-direction: column;
 }
 .container-formik{
-    display: flex;
-    flex-direction: column;
     padding: 2%;
 }
 .custom-form-subtitle{
@@ -18,7 +21,7 @@
     font-family: 'Source Code Pro', monospace;
     font-size: 0.8rem;
 }
-.form-group{
+.form-group, .form-group2{
     margin-bottom: 20px;
 }
 label{
@@ -51,6 +54,12 @@ legend{
     font-size: 0.8rem;
 }
 
+.custorm-form-more-info{
+    padding-top: 4%;
+    color: white;
+    font-size: 0.8rem;
+}
+
 
 .form-terms{
     color: var(--secondary-color-text);
@@ -65,15 +74,33 @@ legend{
     margin-bottom: 5%;
 }
 .formik-button{
-    
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
     color: white;
     width: 40%;
     padding: 2%;
     font-family: 'Source Code Pro', monospace;
-        background-color: var(--secondary-color-text);
-        border-style: none;
-        font-size: 1rem;
+    background-color: var(--secondary-color-text);
+    border-style: none;
+    font-size: 1rem;
+}
+.formik-button:hover{
+    color: white;
+}
+.container-button{
+    padding-left: 2%;
+    padding-right: 2%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    
+}
+@media screen and (width >= 770px ) {
+    .form-section{
+        width: 90vw;
     }
-    .formik-button:hover{
-        color: white;
-    }
+    
+}

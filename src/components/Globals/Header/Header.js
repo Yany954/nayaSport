@@ -25,6 +25,9 @@ function Header() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+  const iconButtonStyle = {
+    color: 'white', // Establece el color blanco directamente en los estilos inline
+  };
 
 
   return (
@@ -54,7 +57,7 @@ function Header() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color= "warning"
+              style={iconButtonStyle}
             >
               <MenuIcon />
             </IconButton>
