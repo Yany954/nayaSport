@@ -3,6 +3,9 @@
     display: flex;
     flex-direction: column;
 }
+.form-items{
+    margin-bottom: 2%;
+}
 .container-customform{
     padding-left: 2%;
     padding-right: 2%;
@@ -21,17 +24,13 @@
     font-family: 'Source Code Pro', monospace;
     font-size: 0.8rem;
 }
-.form-group, .form-group2{
-    margin-bottom: 20px;
-}
 label{
-    
     color: white;
     font-size: 0.9rem;
     font-weight: 500;
     display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 legend{
@@ -87,7 +86,8 @@ legend{
     font-size: 1rem;
 }
 .formik-button:hover{
-    color: white;
+    background-color: white;
+    color: var(--secondary-color-text);
 }
 .container-button{
     padding-left: 2%;
@@ -99,8 +99,15 @@ legend{
     
 }
 @media screen and (width >= 770px ) {
-    .form-section{
-        width: 90vw;
-    }
+    .form-section {
+        flex-direction: row;
+        gap: 20px; 
+      }
     
+      .form-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
 }

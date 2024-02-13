@@ -105,8 +105,7 @@ function ContactForm() {
           <button type='submit' className='contact-form-button'>
             Enviar
           </button>
-          <input type='hidden' name="_next" value="http://localhost:3000/contactanos"></input>
-          
+          <input type="hidden" name="_autoresponse" value="Recibimos tu mensaje. Gracias por contactarte con nosotros"></input>
           </form>
       </article>
             <article class="contact-socialmedia-container">

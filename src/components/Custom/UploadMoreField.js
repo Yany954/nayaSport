@@ -26,9 +26,6 @@ const UploadMoreField = ({ label, ...props }) => {
         {...props}
         style={{ color: 'white' }}
       />
-      {meta.touched && meta.error ? (
-        <div className="error">{meta.error}</div>
-      ) : null}
     </div>
   );
 };
